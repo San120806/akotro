@@ -1,0 +1,83 @@
+'use client';
+
+import { useState, FormEvent } from 'react';
+import Link from 'next/link';
+import { useRouter } from 'next/navigation';
+
+export default function SignupPage() {
+  const router = useRouter();
+  const [name, setName] = useState('');
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+  const [error, setError] = useState('');
+  const [isLoading, setIsLoading] = useState(false);
+
+  const handleSubmit = async (e: FormEvent) => {
+    e.preventDefault();
+    setError('');
+    setIsLoading(true);
+
+    try {
+      const res = await fetch('/api/auth/register', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ name, email, password }),
+      });
+      const data = await res.json();
+
+      if (data.success) {
+        router.push('/');
+        router.refresh();
+      } else {
+        setError(data.error || 'Registration failed. Please try again.');
+      }
+    } catch {
+      setError('Registration failed. Please try again.');
+    } finally {
+      setIsLoading(false);
+    }
+  };
+
+  return (
+    <div className="min-h-screen bg-[#FDF4BE] flex items-center justify-center px-4 py-12">
+      <div className="w-full max-w-md">
+        <div className="text-center mb-8">
+          <Link href="/">
+            <img src="/images/akotrofaviconlogo.png" alt="Akotro" className="h-14 w-auto mx-auto" />
+          </Link>
+          <h1 className="text-3xl font-black text-gray-900 mt-4">Create your account</h1>
+          <p className="text-gray-500 text-sm mt-1">Join the eco-friendly revolution</p>
+        </div>
+
+        <div className="bg-white rounded-2xl shadow-lg p-8">
+          {error && <div className="mb-5 p-4 bg-red-50 text-red-700 text-sm rounded-lg font-medium">{error}</div>}
+
+          <form onSubmit={handleSubmit} className="space-y-5">
+            <div>
+              <label className="block text-sm font-bold text-gray-700 mb-1">Full Name</label>
+              <input type="text" value={name} onChange={(e) => setName(e.target.value)} required className="w-full px-4 py-3 border border-gray-300 rounded-lg text-black focus:border-[#A40000] focus:ring-1 focus:ring-[#A40000] bg-white" />
+            </div>
+
+            <div>
+              <label className="block text-sm font-bold text-gray-700 mb-1">Email Address</label>
+              <input type="email" value={email} onChange={(e) => setEmail(e.target.value)} required className="w-full px-4 py-3 border border-gray-300 rounded-lg text-black focus:border-[#A40000] focus:ring-1 focus:ring-[#A40000] bg-white" />
+            </div>
+
+            <div>
+              <label className="block text-sm font-bold text-gray-700 mb-1">Password</label>
+              <input type="password" value={password} onChange={(e) => setPassword(e.target.value)} required className="w-full px-4 py-3 border border-gray-300 rounded-lg text-black focus:border-[#A40000] focus:ring-1 focus:ring-[#A40000] bg-white" />
+            </div>
+
+            <button type="submit" disabled={isLoading} className="w-full bg-[#A40000] text-white py-3 rounded-lg font-bold text-sm hover:bg-red-800 transition-colors shadow-md mt-2">
+              {isLoading ? 'Creating account...' : 'CREATE ACCOUNT'}
+            </button>
+          </form>
+
+          <p className="text-center text-sm text-gray-500 mt-6">
+            Already have an account? <Link href="/login" className="text-[#A40000] font-bold hover:underline">Sign in</Link>
+          </p>
+        </div>
+      </div>
+    </div>
+  );
+}

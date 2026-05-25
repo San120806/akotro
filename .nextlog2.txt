@@ -1,0 +1,19 @@
+node:internal/modules/package_json_reader:110
+  const parsed = modulesBinding.readPackageJSON(
+                                ^
+
+Error: Invalid package config /Users/saniyakapure/Desktop/akotro/node_modules/next/dist/compiled/commander/package.json.
+    at Object.read (node:internal/modules/package_json_reader:110:33)
+    at _readPackage (node:internal/modules/cjs/loader:481:55)
+    at tryPackage (node:internal/modules/cjs/loader:501:36)
+    at Module._findPath (node:internal/modules/cjs/loader:800:18)
+    at Module._resolveFilename (node:internal/modules/cjs/loader:1391:27)
+    at defaultResolveImpl (node:internal/modules/cjs/loader:1061:19)
+    at resolveForCJSWithHooks (node:internal/modules/cjs/loader:1066:22)
+    at Module._load (node:internal/modules/cjs/loader:1215:37)
+    at TracingChannel.traceSync (node:diagnostics_channel:322:14)
+    at wrapModuleLoad (node:internal/modules/cjs/loader:235:24) {
+  code: 'ERR_INVALID_PACKAGE_CONFIG'
+}
+
+Node.js v24.2.0

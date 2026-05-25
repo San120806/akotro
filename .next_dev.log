@@ -1,0 +1,23 @@
+npm verbose cli /opt/homebrew/Cellar/node/24.2.0/bin/node /opt/homebrew/bin/npm
+npm info using npm@11.3.0
+npm info using node@v24.2.0
+npm verbose title npm run dev
+npm verbose argv "run" "de⨯ Another next dev server is already running.
+
+- Local:        http://localhost:3003
+- PID:          42278
+- Dir:    - Dir:          /Users/saniyakapure/Desktop/akotro
+- Log:          .next/dev/logs/next-development.log
+
+Run kill 42278 to stop it.
+     .next/dev/logs/next-development.log
+
+Run kill 42278 to stop it.
+[?25h
+s 16.2.4 (Turbopack)
+- Local:         http://localhost:3003
+- Network:       http://192.168.29.128:3003
+- Environments: .env.local
+✓ Ready in 364ms
+TypeError: (0 , _formaterrors.setStackFrameResolver) is not a function
+    at ignore-listed frames
