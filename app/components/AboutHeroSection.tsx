@@ -14,13 +14,13 @@ export default function AboutHeroSection() {
           <p className="text-black mb-8 text-sm leading-relaxed">
             We are passionate about protecting the environment while providing top-quality paper stationery. Crafted from recycled paper by women artisans in Mumbai — changing spending patterns, one pen at a time.
           </p>
-          <div className="flex flex-col sm:flex-row gap-4 mt-8 md:mt-0">
-            <Link href="/shop" className="block">
-              <button className="bg-black text-white px-4 py-2 rounded font-medium hover:bg-gray-800 shadow-md whitespace-nowrap">
+          <div className="flex flex-col sm:flex-row gap-4 mt-8 md:mt-0 w-full">
+            <Link href="/shop" className="flex-1 flex">
+              <button className="w-full bg-black text-white px-4 py-3 sm:py-2 rounded font-medium hover:bg-gray-800 shadow-md whitespace-nowrap text-center">
                 SHOP OUR PRODUCTS →
               </button>
             </Link>
-            <button className="bg-red-600 text-white px-4 py-2 rounded font-medium hover:bg-red-700 shadow-md whitespace-nowrap">
+            <button className="flex-1 w-full bg-red-600 text-white px-4 py-3 sm:py-2 rounded font-medium hover:bg-red-700 shadow-md whitespace-nowrap text-center">
               BULK & CORPORATE
             </button>
           </div>
