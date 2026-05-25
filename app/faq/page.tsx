@@ -380,21 +380,27 @@ export default function FAQPage() {
 
         {/* Group by category when ALL is selected */}
         {activeCategory === 'ALL' ? (
-          CATEGORIES.filter(c => c !== 'ALL').map((cat) => {
-            const items = FAQS.filter(f => f.category === cat);
-            if (!items.length) return null;
-            return (
-              <div key={cat}>
-                <p className="faq-group-label">{cat}</p>
-                {items.map((faq) => (
-                  <FAQItem key={faq.id} faq={faq} isOpen={openId === faq.id} onToggle={() => toggle(faq.id)} />
-                ))}
-              </div>
-            );
-          })
+          (() => {
+            let globalIdx = 0;
+            return CATEGORIES.filter(c => c !== 'ALL').map((cat) => {
+              const items = FAQS.filter(f => f.category === cat);
+              if (!items.length) return null;
+              return (
+                <div key={cat}>
+                  <p className="faq-group-label">{cat}</p>
+                  {items.map((faq) => {
+                    const currentIdx = globalIdx++;
+                    return (
+                      <FAQItem key={faq.id} faq={faq} index={currentIdx} isOpen={openId === faq.id} onToggle={() => toggle(faq.id)} />
+                    );
+                  })}
+                </div>
+              );
+            });
+          })()
         ) : (
-          filtered.map((faq) => (
-            <FAQItem key={faq.id} faq={faq} isOpen={openId === faq.id} onToggle={() => toggle(faq.id)} />
+          filtered.map((faq, idx) => (
+            <FAQItem key={faq.id} faq={faq} index={idx} isOpen={openId === faq.id} onToggle={() => toggle(faq.id)} />
           ))
         )}
 
@@ -427,17 +433,21 @@ export default function FAQPage() {
 /* ── Accordion Item Component ── */
 function FAQItem({
   faq,
+  index,
   isOpen,
   onToggle,
 }: {
   faq: { id: string; question: string; answer: string };
+  index: number;
   isOpen: boolean;
   onToggle: () => void;
 }) {
+  const displayId = String(index + 1).padStart(2, '0');
+  
   return (
     <div className={`faq-item${isOpen ? ' open' : ''}`}>
       <button className="faq-trigger" onClick={onToggle} aria-expanded={isOpen}>
-        <span className="faq-num">{faq.id}</span>
+        <span className="faq-num">{displayId}</span>
         <span className="faq-q">{faq.question}</span>
         <span className="faq-chevron">
           <svg width="18" height="18" fill="none" stroke="currentColor" viewBox="0 0 24 24">

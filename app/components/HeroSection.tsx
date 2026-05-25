@@ -24,15 +24,15 @@ export default function HeroSection() {
               Eco-friendly pencils &amp; pens made from recycled paper by artisans in Moradabad. Every product 
               has zero plastic. Some even glow in dark!
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 mt-8 md:mt-0">
-              <Link href="/shop">
-                <button className="bg-black text-white px-4 py-2 rounded font-medium hover:bg-gray-800 shadow-md whitespace-nowrap">
+            <div className="flex flex-col sm:flex-row gap-4 mt-8 md:mt-0 w-full">
+              <Link href="/shop" className="block w-full sm:w-auto">
+                <button className="w-full bg-black text-white px-4 py-3 sm:py-2 rounded font-medium hover:bg-gray-800 shadow-md whitespace-nowrap text-center">
                   SHOP ALL PRODUCTS →
                 </button>
               </Link>
               <button
                 onClick={() => setShowBulkModal(true)}
-                className="bg-red-600 text-white px-4 py-2 rounded font-medium hover:bg-red-700 shadow-md whitespace-nowrap"
+                className="w-full sm:w-auto bg-red-600 text-white px-4 py-3 sm:py-2 rounded font-medium hover:bg-red-700 shadow-md whitespace-nowrap text-center"
               >
                 BULK &amp; CORPORATE
               </button>
