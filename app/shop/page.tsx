@@ -269,13 +269,13 @@ function ShopContent() {
       {/* Hero Products */}
       <div className="hero-products">
         <div className="hero-products-header">
-          <span className="hero-products-badge">⭐ OUR HERO PRODUCTS</span>
+          <span className="hero-products-badge"> OUR HERO PRODUCTS</span>
           <span className="hero-products-sub">Bestsellers — Start here</span>
         </div>
         <div className="hero-grid">
           {[
-            { img: '/images/newspaperpencil.avif', num: 'HERO #1', off: '55% OFF', cat: '⭐ BESTSELLER · NEWSPAPER PENCIL', name: 'News Paper Pencil', desc: 'Our most beloved product — crafted from recycled newspapers, giving waste paper a beautiful second life. Smooth 2B lead, earthy texture, perfect everyday pencil.', price: '₹115', orig: '₹180', save: 'Save ₹65', id: '1' },
-            { img: '/images/brownpaperpen.avif', num: 'HERO #2', off: '18% OFF', cat: '⭐ RECYCLED · NEW ARRIVAL · ECO PEN', name: 'Brown Paper Pen', desc: 'Smooth ballpoint in a 100% recycled brown paper barrel. Comfortable grip, consistent ink flow, and a warm earthy look that stands apart from plastic pens.', price: '₹115', orig: '₹140', save: 'Save ₹25', id: '2' },
+            { img: '/images/newspaperpencil.avif', num: 'HERO #1', off: '55% OFF', cat: ' BESTSELLER · NEWSPAPER PENCIL', name: 'News Paper Pencil', desc: 'Our most beloved product — crafted from recycled newspapers, giving waste paper a beautiful second life. Smooth 2B lead, earthy texture, perfect everyday pencil.', price: '₹115', orig: '₹180', save: 'Save ₹65', id: '1' },
+            { img: '/images/brownpaperpen.avif', num: 'HERO #2', off: '18% OFF', cat: ' RECYCLED · NEW ARRIVAL · ECO PEN', name: 'Brown Paper Pen', desc: 'Smooth ballpoint in a 100% recycled brown paper barrel. Comfortable grip, consistent ink flow, and a warm earthy look that stands apart from plastic pens.', price: '₹115', orig: '₹140', save: 'Save ₹25', id: '2' },
           ].map(h => (
             <div key={h.id} className="hero-card">
               <div className="hero-card-img relative">
@@ -303,7 +303,7 @@ function ShopContent() {
               <div className="hero-card-body">
                 <div>
                   <div className="hero-card-badges">
-                    <span className="hbadge-num">⭐ {h.num}</span>
+                    <span className="hbadge-num"> {h.num}</span>
                     <span className="hbadge-off">{h.off}</span>
                   </div>
                   <div className="hero-card-cat">{h.cat}</div>
@@ -460,7 +460,7 @@ function ShopContent() {
         <div className="nl-card">
           <div>
             <div className="nl-title">
-              <span style={{fontSize:'16px'}}>🌱</span> Join the Sustainable Lifestyle Club
+              <span style={{fontSize:'16px'}}></span> Join the Sustainable Lifestyle Club
             </div>
             <div className="nl-sub">Get new launches, exclusive discounts, and eco-living tips.</div>
           </div>
@@ -552,7 +552,7 @@ function ShopContent() {
             <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
               <svg className="w-8 h-8 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M5 13l4 4L19 7" /></svg>
             </div>
-            <h3 className="text-2xl font-bold text-gray-900 mb-2">You&apos;re In! 🌱</h3>
+            <h3 className="text-2xl font-bold text-gray-900 mb-2">You&apos;re In! </h3>
             <p className="text-gray-600 mb-2 font-semibold">Successfully subscribed to the newsletter!</p>
             <p className="text-gray-500 text-sm mb-6">You&apos;ll be the first to know about new launches, exclusive discounts, and eco-living tips from Akotro.</p>
             <button

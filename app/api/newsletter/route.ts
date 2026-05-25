@@ -18,7 +18,7 @@ export async function POST(req: NextRequest) {
     const siteId = process.env.WIX_SITE_ID;
 
     if (!apiKey || !siteId) {
-      console.warn('[newsletter] ⚠️  WIX_API_KEY / WIX_SITE_ID not set — skipping Wix save for:', email);
+      console.warn('[newsletter] ⚠  WIX_API_KEY / WIX_SITE_ID not set — skipping Wix save for:', email);
       return NextResponse.json({ success: true, saved: false });
     }
 
@@ -49,17 +49,17 @@ export async function POST(req: NextRequest) {
 
       const code = data?.details?.applicationError?.code || response.status;
       const msg = data?.details?.applicationError?.description || data?.message || 'Unknown error';
-      console.error(`[newsletter] ❌ Wix error — ${response.status} | code: ${code} | message: ${msg}`);
+      console.error(`[newsletter]  Wix error — ${response.status} | code: ${code} | message: ${msg}`);
       return NextResponse.json({ success: true, saved: false });
     }
 
     // Wix returns "id" (not "_id") on the contact object
     const contactId = data?.contact?.id;
-    console.log('[newsletter] ✅ Saved to Wix:', email, '| Contact ID:', contactId);
+    console.log('[newsletter]  Saved to Wix:', email, '| Contact ID:', contactId);
     return NextResponse.json({ success: true, saved: true, contactId });
 
   } catch (error: any) {
-    console.error('[newsletter] ❌ Unexpected error:', error?.message || error);
+    console.error('[newsletter]  Unexpected error:', error?.message || error);
     return NextResponse.json({ success: true, saved: false });
   }
 }

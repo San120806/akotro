@@ -11,25 +11,25 @@ export default function OurPillarsSection() {
 
   const pillars = [
     {
-      icon: "👩‍💼",
+      icon: "‍",
       title: "Empowering Women",
       subtitle: "SOCIAL IMPACT · WOMEN ARTISANS",
       description: "At the heart of Akotro's mission lies a steadfast commitment to empowering women. Through the employment of women from nearby localities, the company not only provides them with a steady income but also imparts valuable skills and training in stationery production and crafting. These women are integral to every stage of manufacturing — from collecting recycled paper to assembling finished products."
     },
     {
-      icon: "🌱",
+      icon: "",
       title: "Sustainable Production",
       subtitle: "ZERO PLASTIC · 100% RECYCLED PAPER",
       description: "Every product starts with waste — turning discarded materials into beautiful, functional stationery. Our eco-conscious manufacturing process ensures that sustainability is embedded in every step, from collection to crafting, creating products that are kind to the planet."
     },
     {
-      icon: "🤝",
+      icon: "",
       title: "Community Impact",
       subtitle: "EDUCATION · OUTREACH · WORKSHOPS",
       description: "We believe in creating lasting impact beyond business. Through education initiatives, community outreach, and workshops, we work to foster a culture of sustainability and conscious consumption in the communities we serve."
     },
     {
-      icon: "✨",
+      icon: "",
       title: "Quality Without Compromise",
       subtitle: "ECO-FRIENDLY · PREMIUM PERFORMANCE",
       description: "Sustainability doesn't mean sacrificing quality. Our products are crafted to perform at the highest level while remaining kind to the environment, proving that eco-consciousness and excellence can go hand in hand."

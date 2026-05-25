@@ -33,18 +33,18 @@ export default function Header() {
       <div className="bg-red-700 text-white text-sm py-3 px-4 overflow-hidden">
         <style>{`
           @keyframes scroll {
-            0% { transform: translateX(100%); }
-            100% { transform: translateX(-100%); }
+            0% { transform: translateX(0%); }
+            100% { transform: translateX(-50%); }
           }
           .scrolling-text {
-            animation: scroll 15s linear infinite;
+            animation: scroll 10s linear infinite;
             display: inline-block;
             white-space: nowrap;
           }
         `}</style>
         <div className="flex items-center w-full overflow-hidden">
           <div className="scrolling-text">
-            🎁 FREE DELIVERY ALL OVER INDIA - 7 DAYS &nbsp;&nbsp;• &nbsp;&nbsp;♻️ 100% RECYCLED · ZERO PLASTIC &nbsp;&nbsp;• &nbsp;&nbsp;🎁 FREE DELIVERY ALL OVER INDIA - 7 DAYS &nbsp;&nbsp;• &nbsp;&nbsp;♻️ 100% RECYCLED · ZERO PLASTIC
+             FREE DELIVERY ALL OVER INDIA - 7 DAYS &nbsp;&nbsp;• &nbsp;&nbsp;100% RECYCLED · ZERO PLASTIC &nbsp;&nbsp;• &nbsp;&nbsp; FREE DELIVERY ALL OVER INDIA - 7 DAYS &nbsp;&nbsp;• &nbsp;&nbsp;100% RECYCLED · ZERO PLASTIC &nbsp;&nbsp;• &nbsp;&nbsp; FREE DELIVERY ALL OVER INDIA - 7 DAYS &nbsp;&nbsp;• &nbsp;&nbsp;100% RECYCLED · ZERO PLASTIC &nbsp;&nbsp;• &nbsp;&nbsp; FREE DELIVERY ALL OVER INDIA - 7 DAYS &nbsp;&nbsp;• &nbsp;&nbsp;100% RECYCLED · ZERO PLASTIC &nbsp;&nbsp;• &nbsp;&nbsp; 
           </div>
         </div>
       </div>

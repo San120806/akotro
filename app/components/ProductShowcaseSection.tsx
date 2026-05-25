@@ -80,7 +80,7 @@ export default function ProductShowcaseSection() {
             onClick={() => setActiveTab('hero')}
             className="px-6 py-3 rounded-full bg-red-600 text-white text-sm font-bold hover:bg-red-700 shadow-md transition-colors whitespace-nowrap"
           >
-            ⭐ OUR HERO PRODUCTS
+             OUR HERO PRODUCTS
           </button>
           <span className="text-gray-700 text-sm font-bold">
             Bestsellers - Start here

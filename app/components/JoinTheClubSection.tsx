@@ -90,7 +90,7 @@ export default function JoinTheClubSection() {
             <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
               <svg className="w-8 h-8 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M5 13l4 4L19 7" /></svg>
             </div>
-            <h3 className="text-2xl font-bold text-gray-900 mb-2">You&apos;re In! 🌱</h3>
+            <h3 className="text-2xl font-bold text-gray-900 mb-2">You&apos;re In! </h3>
             <p className="text-gray-600 mb-2 font-semibold">Successfully subscribed to the newsletter!</p>
             <p className="text-gray-500 text-sm mb-6">You&apos;ll be the first to know about new launches, exclusive discounts, and eco-living tips from Akotro.</p>
             <button

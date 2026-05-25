@@ -47,7 +47,7 @@ export default function PrivacyPolicyPage() {
               All visitors to <a href="https://www.akotro.com" className="text-[#A40000] hover:underline font-bold">www.akotro.com</a> (Website) are advised to read and understand our Privacy Policy carefully, as by accessing the Website you agree to be bound by the terms and conditions of the Privacy Policy and consent to the collection, storage and use of information relating to you as provided herein.
             </p>
             <p className="bg-yellow-50 border border-yellow-200 p-4 rounded-lg text-xs md:text-sm text-yellow-800 font-medium">
-              ⚠️ If you do not agree with the terms and conditions of our Privacy Policy, including in relation to the manner of collection or use of your information, please do not use or access the Site.
+              ⚠ If you do not agree with the terms and conditions of our Privacy Policy, including in relation to the manner of collection or use of your information, please do not use or access the Site.
             </p>
             <p>
               If you have any questions or concerns regarding this privacy policy, you should contact our Customer Support Desk at <a href="tel:+917900179710" className="text-[#A40000] hover:underline font-bold">+91 79001 79710</a> between 12 noon to 5 pm or can mail us at <a href="mailto:support@akotro.com" className="text-[#A40000] hover:underline font-bold">support@akotro.com</a>.

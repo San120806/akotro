@@ -228,7 +228,7 @@ export default function ReviewsSection() {
               </svg>
             </div>
 
-            <h3 className="text-2xl font-bold text-gray-900 mb-2">You&apos;re In! 🌱</h3>
+            <h3 className="text-2xl font-bold text-gray-900 mb-2">You&apos;re In! </h3>
             <p className="text-gray-600 mb-2 font-semibold">Successfully subscribed to the newsletter!</p>
             <p className="text-gray-500 text-sm mb-6">
               You&apos;ll be the first to know about new launches, exclusive discounts, and eco-living tips from Akotro.

@@ -25,14 +25,14 @@ export default function HeroSection() {
               has zero plastic. Some even glow in dark!
             </p>
             <div className="flex flex-col sm:flex-row gap-4 mt-8 md:mt-0 w-full">
-              <Link href="/shop" className="block w-full sm:w-auto">
+              <Link href="/shop" className="flex-1 flex">
                 <button className="w-full bg-black text-white px-4 py-3 sm:py-2 rounded font-medium hover:bg-gray-800 shadow-md whitespace-nowrap text-center">
                   SHOP ALL PRODUCTS →
                 </button>
               </Link>
               <button
                 onClick={() => setShowBulkModal(true)}
-                className="w-full sm:w-auto bg-red-600 text-white px-4 py-3 sm:py-2 rounded font-medium hover:bg-red-700 shadow-md whitespace-nowrap text-center"
+                className="flex-1 w-full bg-red-600 text-white px-4 py-3 sm:py-2 rounded font-medium hover:bg-red-700 shadow-md whitespace-nowrap text-center"
               >
                 BULK &amp; CORPORATE
               </button>

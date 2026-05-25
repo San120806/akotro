@@ -67,7 +67,7 @@ export default function BulkOrderModal({ onClose }: Props) {
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M5 13l4 4L19 7" />
                 </svg>
               </div>
-              <h3 className="text-xl font-black text-gray-900 mb-2">Request Received! 🎉</h3>
+              <h3 className="text-xl font-black text-gray-900 mb-2">Request Received! </h3>
               <p className="text-gray-500 text-sm leading-relaxed">
                 Thank you for reaching out. Our team will review your requirement and get back to you within <strong>24 hours</strong>.
               </p>

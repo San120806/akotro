@@ -30,7 +30,7 @@ export async function POST(req: Request) {
     const existing = fs.existsSync(logFile) ? JSON.parse(fs.readFileSync(logFile, 'utf-8')) : [];
     existing.push(entry);
     fs.writeFileSync(logFile, JSON.stringify(existing, null, 2));
-    console.log('✅ Bulk order saved locally:', entry.name, entry.email);
+    console.log(' Bulk order saved locally:', entry.name, entry.email);
 
     // 2. Also try to push to Wix CMS via REST API
     try {
@@ -62,18 +62,18 @@ export async function POST(req: Request) {
         });
         const cmsData = await cmsRes.json();
         if (cmsRes.ok) {
-          console.log('✅ Also saved to Wix CMS:', cmsData);
+          console.log(' Also saved to Wix CMS:', cmsData);
         } else {
-          console.warn('⚠️ Wix CMS save failed (non-critical):', JSON.stringify(cmsData));
+          console.warn('⚠ Wix CMS save failed (non-critical):', JSON.stringify(cmsData));
         }
       }
     } catch (wixErr: any) {
-      console.warn('⚠️ Wix CMS push failed (non-critical, data saved locally):', wixErr.message);
+      console.warn('⚠ Wix CMS push failed (non-critical, data saved locally):', wixErr.message);
     }
 
     return NextResponse.json({ success: true });
   } catch (error: any) {
-    console.error('❌ Bulk order error:', error.message || error);
+    console.error(' Bulk order error:', error.message || error);
     return NextResponse.json({ success: false, error: error.message || 'Failed to submit.' }, { status: 500 });
   }
 }

@@ -141,7 +141,7 @@ export default function AccountPage() {
             <h2 className="text-lg font-black text-gray-900 mb-4">My Orders</h2>
             {orderHistory.length === 0 ? (
               <div className="text-center py-12">
-                <div className="text-5xl mb-4">📦</div>
+                <div className="text-5xl mb-4"></div>
                 <p className="text-gray-500 font-medium">No orders yet</p>
                 <Link href="/shop" className="mt-4 inline-block bg-[#A40000] text-white px-6 py-2.5 rounded-lg font-bold text-sm hover:bg-red-800 transition-colors">
                   Shop Now
@@ -175,7 +175,7 @@ export default function AccountPage() {
             <h2 className="text-lg font-black text-gray-900 mb-4">My Cart</h2>
             {cartItems.length === 0 ? (
               <div className="text-center py-12">
-                <div className="text-5xl mb-4">🛒</div>
+                <div className="text-5xl mb-4"></div>
                 <p className="text-gray-500 font-medium">Your cart is empty</p>
                 <Link href="/shop" className="mt-4 inline-block bg-[#A40000] text-white px-6 py-2.5 rounded-lg font-bold text-sm hover:bg-red-800 transition-colors">
                   Browse Products
@@ -266,7 +266,7 @@ export default function AccountPage() {
             <h2 className="text-lg font-black text-gray-900 mb-1">Wallet</h2>
             <p className="text-sm text-gray-500 mb-4">Save your payment details for faster checkout.</p>
             <div className="border-t border-gray-100 pt-12 pb-16 text-center">
-              <div className="text-5xl mb-4">💳</div>
+              <div className="text-5xl mb-4"></div>
               <h3 className="text-lg font-bold text-gray-800 mb-2">You haven&apos;t saved any payment methods yet</h3>
               <p className="text-gray-500 text-sm max-w-sm mx-auto">Securely save your payment details for faster checkout whenever you place an order.</p>
             </div>

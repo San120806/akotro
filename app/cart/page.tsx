@@ -165,7 +165,7 @@ export default function CartPage() {
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M5 13l4 4L19 7" />
               </svg>
             </div>
-            <h1 className="text-3xl font-black text-gray-900 mb-3">Order Placed! 🎉</h1>
+            <h1 className="text-3xl font-black text-gray-900 mb-3">Order Placed! </h1>
             <p className="text-gray-500 mb-8">Thank you for shopping with Akotro. Your order is confirmed and will be delivered within 7 days.</p>
             <div className="flex flex-col sm:flex-row gap-3 justify-center">
               <Link href="/account" className="bg-[#A40000] text-white px-6 py-3 rounded-lg font-bold text-sm hover:bg-red-800 transition-colors">
