@@ -42,17 +42,17 @@ export default function OurPillarsSection() {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
           {/* Left Section */}
           <div>
-            <p className="font-bold text-xs uppercase mb-2 text-[#F9C923]">OUR FOUR PILLARS</p>
+            <p className="font-bold text-xs uppercase mb-2 text-[#fdd835]">OUR FOUR PILLARS</p>
             <h2 className="text-4xl font-extrabold mb-6">
               What We
               <br />
-              <span className="text-[#F9C923]">Stand For</span>
+              <span className="text-[#fdd835]">Stand For</span>
             </h2>
             <p className="text-white text-sm leading-relaxed mb-8">
               Every decision at Akotro — from which paper to source, to which community to partner with — is guided by our core pillars. These are the principles behind everything we make.
             </p>
             <a href="/shop" className="inline-block">
-              <button className="bg-[#F9C923] text-black px-6 py-2 rounded font-bold hover:bg-yellow-400 transition-colors text-sm">
+              <button className="bg-[#fdd835] text-black px-6 py-2 rounded font-bold hover:bg-[#fdd835] transition-colors text-sm">
                 SHOP OUR PRODUCTS →
               </button>
             </a>
@@ -69,21 +69,21 @@ export default function OurPillarsSection() {
                   onClick={() => togglePillar(index)}
                 >
                   <div className="flex-shrink-0 mt-1">
-                    <div className="w-10 h-10 rounded-full bg-[#F9C923] flex items-center justify-center text-lg font-bold text-black shadow-sm">
+                    <div className="w-10 h-10 rounded-full bg-[#fdd835] flex items-center justify-center text-lg font-bold text-black shadow-sm">
                       {String.fromCharCode(64 + index + 1)}
                     </div>
                   </div>
                   <div className="flex-1 overflow-hidden">
                     <div className="flex justify-between items-center mb-1">
-                      <h3 className="font-bold text-white group-hover:text-[#F9C923] transition-colors">{pillar.title}</h3>
-                      <span className="text-[#F9C923] text-xl font-light ml-4">
+                      <h3 className="font-bold text-white group-hover:text-[#fdd835] transition-colors">{pillar.title}</h3>
+                      <span className="text-[#fdd835] text-xl font-light ml-4">
                         {isOpen ? '−' : '+'}
                       </span>
                     </div>
 
                     <div className={`grid transition-all duration-300 ease-in-out ${isOpen ? 'grid-rows-[1fr] opacity-100' : 'grid-rows-[0fr] opacity-0'}`}>
                       <div className="overflow-hidden">
-                        <p className="text-xs text-[#F9C923] uppercase mb-2 mt-1 font-medium tracking-wide">{pillar.subtitle}</p>
+                        <p className="text-xs text-[#fdd835] uppercase mb-2 mt-1 font-medium tracking-wide">{pillar.subtitle}</p>
                         <p className="text-xs text-white/90 leading-relaxed pb-2">{pillar.description}</p>
                       </div>
                     </div>

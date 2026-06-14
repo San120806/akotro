@@ -58,7 +58,7 @@ export default function BlogPage() {
       <div className="pt-10 pb-6 text-center px-4">
         <h1
           className="text-3xl md:text-5xl font-black tracking-[0.2em] uppercase"
-          style={{ color: '#A40000', fontFamily: 'serif' }}
+          style={{ color: '#880808', fontFamily: 'serif' }}
         >
           Akotro E-Paper Blog
         </h1>

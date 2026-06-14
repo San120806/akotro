@@ -18,7 +18,7 @@ export default function HeroSection() {
               <br />
               Re-Create.
               <br />
-              <span className="text-red-600">Re-Use.</span>
+              <span className="text-[#880808]">Re-Use.</span>
             </h1>
             <p className="text-black mb-8 text-sm leading-relaxed">
               Eco-friendly pencils &amp; pens made from recycled paper by artisans in Moradabad. Every product 
@@ -32,15 +32,15 @@ export default function HeroSection() {
               </Link>
               <button
                 onClick={() => setShowBulkModal(true)}
-                className="flex-1 w-full bg-red-600 text-white px-4 py-3 sm:py-2 rounded font-medium hover:bg-red-700 shadow-md whitespace-nowrap text-center"
+                className="flex-1 w-full bg-[#880808] text-white px-4 py-3 sm:py-2 rounded font-medium hover:bg-[#6b0606] shadow-md whitespace-nowrap text-center"
               >
                 BULK &amp; CORPORATE
               </button>
             </div>
             <div className="flex flex-wrap gap-3 mt-8 text-xs">
-              <span className="bg-yellow-200 text-black px-3 py-1 rounded-full shadow-sm whitespace-nowrap">7-Day Delivery</span>
-              <span className="bg-yellow-200 text-black px-3 py-1 rounded-full shadow-sm whitespace-nowrap">Pay on Delivery</span>
-              <span className="bg-yellow-200 text-black px-3 py-1 rounded-full shadow-sm whitespace-nowrap">Women-Led</span>
+              <span className="bg-[#fdd835]/60 text-black px-3 py-1 rounded-full shadow-sm whitespace-nowrap">7-Day Delivery</span>
+              <span className="bg-[#fdd835]/60 text-black px-3 py-1 rounded-full shadow-sm whitespace-nowrap">Pay on Delivery</span>
+              <span className="bg-[#fdd835]/60 text-black px-3 py-1 rounded-full shadow-sm whitespace-nowrap">Women-Led</span>
             </div>
           </div>
 
@@ -48,13 +48,13 @@ export default function HeroSection() {
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mt-8 md:mt-0">
             <div className="relative bg-gray-800 rounded-lg overflow-hidden h-80 flex items-center justify-center">
               <img src="/images/brwnpwncil.avif" alt="Brown Pencils" className="w-full h-full object-cover" />
-              <span className="absolute bottom-3 left-3 bg-yellow-400 text-black px-2 py-1 rounded text-xs font-bold shadow-md whitespace-nowrap">
+              <span className="absolute bottom-3 left-3 bg-[#fdd835] text-black px-2 py-1 rounded text-xs font-bold shadow-md whitespace-nowrap">
                 BROWN PENCIL
               </span>
             </div>
             <div className="relative bg-gray-800 rounded-lg overflow-hidden h-80 flex items-center justify-center">
               <img src="/images/pens.avif" alt="Colored Pencils" className="w-full h-full object-cover" />
-              <span className="absolute bottom-3 left-3 bg-yellow-400 text-black px-2 py-1 rounded text-xs font-bold shadow-md whitespace-nowrap">
+              <span className="absolute bottom-3 left-3 bg-[#fdd835] text-black px-2 py-1 rounded text-xs font-bold shadow-md whitespace-nowrap">
                 SEED PENCIL
               </span>
             </div>

@@ -1,15 +1,15 @@
 export default function MeetTheTeamSection() {
   return (
-    <section className="bg-[#FDF4BE] py-16">
+    <section className="bg-[#fffde8] py-16">
       <div className="max-w-7xl mx-auto px-4">
         {/* Header */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-end mb-12">
           <div>
-            <p className="text-red-600 font-bold text-xs uppercase mb-2">MEET THE TEAM</p>
+            <p className="text-[#880808] font-bold text-xs uppercase mb-2">MEET THE TEAM</p>
             <h2 className="text-4xl font-bold text-black mb-4">
               The People Behind
               <br />
-              <span className="text-red-600">Akotro</span>
+              <span className="text-[#880808]">Akotro</span>
             </h2>
           </div>
           <div>
@@ -32,7 +32,7 @@ export default function MeetTheTeamSection() {
                 />
               </div>
               <div>
-                <p className="text-red-600 font-bold text-xs uppercase">FOUNDER & OWNER</p>
+                <p className="text-[#880808] font-bold text-xs uppercase">FOUNDER & OWNER</p>
                 <h3 className="text-xl font-bold text-black">Sangita Das</h3>
                 <p className="text-black text-xs">अकोत्र का</p>
               </div>
@@ -44,10 +44,10 @@ export default function MeetTheTeamSection() {
               A Mumbai-based entrepreneur, Sangita saw an opportunity not just to build a sustainable business, but to create meaningful employment for women in the community — combining environmental purpose with social impact.
             </p>
             <div className="flex gap-2 flex-wrap">
-              <span className="bg-yellow-200 text-black text-xs px-2 py-1 rounded font-bold">SUSTAINABILITY</span>
-              <span className="bg-yellow-200 text-black text-xs px-2 py-1 rounded font-bold">ENTREPRENEURSHIP</span>
-              <span className="bg-yellow-200 text-black text-xs px-2 py-1 rounded font-bold">IMPACT</span>
-              <span className="bg-yellow-200 text-black text-xs px-2 py-1 rounded font-bold">WOMEN EMPOWERMENT</span>
+              <span className="bg-[#fdd835]/60 text-black text-xs px-2 py-1 rounded font-bold">SUSTAINABILITY</span>
+              <span className="bg-[#fdd835]/60 text-black text-xs px-2 py-1 rounded font-bold">ENTREPRENEURSHIP</span>
+              <span className="bg-[#fdd835]/60 text-black text-xs px-2 py-1 rounded font-bold">IMPACT</span>
+              <span className="bg-[#fdd835]/60 text-black text-xs px-2 py-1 rounded font-bold">WOMEN EMPOWERMENT</span>
             </div>
           </div>
 
@@ -62,7 +62,7 @@ export default function MeetTheTeamSection() {
                 />
               </div>
               <div>
-                <p className="text-red-600 font-bold text-xs uppercase">ECO WARRIOR</p>
+                <p className="text-[#880808] font-bold text-xs uppercase">ECO WARRIOR</p>
                 <h3 className="text-xl font-bold text-black">Devanshi Das</h3>
                 <p className="text-black text-xs">ईको वारियर</p>
               </div>
@@ -74,10 +74,10 @@ export default function MeetTheTeamSection() {
               Young, driven, and deeply committed to the cause — Devanshi represents the next generation of climate-conscious Indians who believe business can be a force for environmental good.
             </p>
             <div className="flex gap-2 flex-wrap">
-              <span className="bg-yellow-200 text-black text-xs px-2 py-1 rounded font-bold">STUDENT</span>
-              <span className="bg-yellow-200 text-black text-xs px-2 py-1 rounded font-bold">ECO WARRIOR</span>
-              <span className="bg-yellow-200 text-black text-xs px-2 py-1 rounded font-bold">PRODUCTION HEAD</span>
-              <span className="bg-yellow-200 text-black text-xs px-2 py-1 rounded font-bold">CHANGE MAKER</span>
+              <span className="bg-[#fdd835]/60 text-black text-xs px-2 py-1 rounded font-bold">STUDENT</span>
+              <span className="bg-[#fdd835]/60 text-black text-xs px-2 py-1 rounded font-bold">ECO WARRIOR</span>
+              <span className="bg-[#fdd835]/60 text-black text-xs px-2 py-1 rounded font-bold">PRODUCTION HEAD</span>
+              <span className="bg-[#fdd835]/60 text-black text-xs px-2 py-1 rounded font-bold">CHANGE MAKER</span>
             </div>
           </div>
         </div>

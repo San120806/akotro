@@ -1,6 +1,6 @@
 export default function MissionSection() {
   return (
-    <section className="bg-[#A40000] text-white py-16">
+    <section className="bg-[#880808] text-white py-16">
       <div className="max-w-7xl mx-auto px-4">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
           {/* Left */}
@@ -8,7 +8,7 @@ export default function MissionSection() {
             <h2 className="text-4xl font-bold mb-4">
               Reduce. Reuse.
               <br />
-              <span className="text-yellow-400">Recycle.</span>
+              <span className="text-[#fdd835]">Recycle.</span>
             </h2>
             <p className="text-sm mb-6 leading-relaxed">
               Anukra (ARPL) → Together in one place, we believed the object you hold every day while 

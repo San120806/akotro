@@ -46,15 +46,15 @@ export default function ProductsSection() {
           <div className="text-center mb-12">
             <h2 className="text-4xl font-bold mb-2">OUR PRODUCTS</h2>
             <p className="text-gray-600">
-              Made from Recycled Paper. <span className="font-bold text-red-600">Zero Plastic.</span>
+              Made from Recycled Paper. <span className="font-bold text-[#880808]">Zero Plastic.</span>
             </p>
-            <Link href="/shop" className="text-red-600 font-bold text-sm mt-2 inline-block">
+            <Link href="/shop" className="text-[#880808] font-bold text-sm mt-2 inline-block">
               VIEW ALL →
             </Link>
           </div>
           <div className="text-center py-12">
             <p className="text-gray-600">No products available yet. Check back soon!</p>
-            <Link href="/admin/products" className="text-red-600 font-bold mt-4 inline-block">
+            <Link href="/admin/products" className="text-[#880808] font-bold mt-4 inline-block">
               Add products from admin panel →
             </Link>
           </div>
@@ -70,9 +70,9 @@ export default function ProductsSection() {
         <div className="text-center mb-12">
           <h2 className="text-4xl font-bold mb-2">OUR PRODUCTS</h2>
           <p className="text-gray-600">
-            Made from Recycled Paper. <span className="font-bold text-red-600">Zero Plastic.</span>
+            Made from Recycled Paper. <span className="font-bold text-[#880808]">Zero Plastic.</span>
           </p>
-          <Link href="/shop" className="text-red-600 font-bold text-sm mt-2 inline-block">
+          <Link href="/shop" className="text-[#880808] font-bold text-sm mt-2 inline-block">
             VIEW ALL →
           </Link>
         </div>
@@ -89,7 +89,7 @@ export default function ProductsSection() {
                     alt={product.name}
                     className="w-full h-full object-cover group-hover:scale-105 transition-transform"
                   />
-                  <span className="absolute top-3 left-3 bg-yellow-300 text-black px-2 py-1 rounded text-xs font-bold shadow-sm whitespace-nowrap">
+                  <span className="absolute top-3 left-3 bg-[#fdd835] text-black px-2 py-1 rounded text-xs font-bold shadow-sm whitespace-nowrap">
                     {product.featured ? 'FEATURED' : 'NEW'}
                   </span>
                 </div>
@@ -101,7 +101,7 @@ export default function ProductsSection() {
                 {/* Price and Button */}
                 <div className="flex justify-between items-center">
                   <span className="font-bold text-lg">₹{product.price}</span>
-                  <button className="bg-red-600 text-white px-3 py-1 rounded text-xs font-bold hover:bg-red-700 shadow-md whitespace-nowrap">
+                  <button className="bg-[#880808] text-white px-3 py-1 rounded text-xs font-bold hover:bg-[#6b0606] shadow-md whitespace-nowrap">
                     ADD TO CART
                   </button>
                 </div>

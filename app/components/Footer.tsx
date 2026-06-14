@@ -24,11 +24,11 @@ export default function Footer() {
               Eco-friendly stationery crafted from recycled paper by women artisans in Mumbai. Replacing plastic — one pen at a time.
             </p>
             <div className="flex flex-wrap gap-2 mb-4">
-              <span className="bg-yellow-400 text-black px-2 py-1 text-xs font-bold rounded">100% RECYCLED</span>
-              <span className="bg-yellow-400 text-black px-2 py-1 text-xs font-bold rounded">MADE IN INDIA</span>
-              <span className="bg-yellow-400 text-black px-2 py-1 text-xs font-bold rounded">WOMEN-LED</span>
-              <span className="bg-yellow-400 text-black px-2 py-1 text-xs font-bold rounded">PLASTIC-FREE</span>
-              <span className="bg-yellow-400 text-black px-2 py-1 text-xs font-bold rounded">PAY ON DELIVERY</span>
+              <span className="bg-[#fdd835] text-black px-2 py-1 text-xs font-bold rounded">100% RECYCLED</span>
+              <span className="bg-[#fdd835] text-black px-2 py-1 text-xs font-bold rounded">MADE IN INDIA</span>
+              <span className="bg-[#fdd835] text-black px-2 py-1 text-xs font-bold rounded">WOMEN-LED</span>
+              <span className="bg-[#fdd835] text-black px-2 py-1 text-xs font-bold rounded">PLASTIC-FREE</span>
+              <span className="bg-[#fdd835] text-black px-2 py-1 text-xs font-bold rounded">PAY ON DELIVERY</span>
             </div>
           </div>
 
@@ -37,32 +37,32 @@ export default function Footer() {
             <div className="grid grid-cols-1 sm:grid-cols-3 gap-8 mb-6">
               {/* Shop */}
               <div>
-                <h4 className="font-bold mb-4 uppercase text-yellow-400 text-sm">SHOP</h4>
+                <h4 className="font-bold mb-4 uppercase text-[#fdd835] text-sm">SHOP</h4>
                 <ul className="space-y-2 text-sm">
-                  <li><Link href="/shop" className="text-gray-300 hover:text-yellow-400">All Products</Link></li>
-                  <li><Link href="/shop" className="text-gray-300 hover:text-yellow-400">Biotic Stationery</Link></li>
-                  <li><Link href="/shop" className="text-gray-300 hover:text-yellow-400">Organic Apparel</Link></li>
-                  <li><Link href="/shop" className="text-gray-300 hover:text-yellow-400">Plantable Range</Link></li>
+                  <li><Link href="/shop" className="text-gray-300 hover:text-[#fdd835]">All Products</Link></li>
+                  <li><Link href="/shop" className="text-gray-300 hover:text-[#fdd835]">Biotic Stationery</Link></li>
+                  <li><Link href="/shop" className="text-gray-300 hover:text-[#fdd835]">Organic Apparel</Link></li>
+                  <li><Link href="/shop" className="text-gray-300 hover:text-[#fdd835]">Plantable Range</Link></li>
                 </ul>
               </div>
 
               {/* Help */}
               <div>
-                <h4 className="font-bold mb-4 uppercase text-yellow-400 text-sm">HELP</h4>
+                <h4 className="font-bold mb-4 uppercase text-[#fdd835] text-sm">HELP</h4>
                 <ul className="space-y-2 text-sm">
-                  <li><Link href="/faq" className="text-gray-300 hover:text-yellow-400">FAQ</Link></li>
-                  <li><Link href="/privacy-policy" className="text-gray-300 hover:text-yellow-400">Privacy Policy</Link></li>
-                  <li><Link href="/shipping-returns" className="text-gray-300 hover:text-yellow-400">Shipping & Returns</Link></li>
-                  <li><Link href="#" className="text-gray-300 hover:text-yellow-400">Track Order</Link></li>
+                  <li><Link href="/faq" className="text-gray-300 hover:text-[#fdd835]">FAQ</Link></li>
+                  <li><Link href="/privacy-policy" className="text-gray-300 hover:text-[#fdd835]">Privacy Policy</Link></li>
+                  <li><Link href="/shipping-returns" className="text-gray-300 hover:text-[#fdd835]">Shipping & Returns</Link></li>
+                  <li><Link href="#" className="text-gray-300 hover:text-[#fdd835]">Track Order</Link></li>
                 </ul>
               </div>
 
               {/* Contact */}
               <div>
-                <h4 className="font-bold mb-4 uppercase text-yellow-400 text-sm">CONTACT</h4>
+                <h4 className="font-bold mb-4 uppercase text-[#fdd835] text-sm">CONTACT</h4>
                 <ul className="space-y-2 text-sm">
-                  <li><Link href="mailto:support@akotro.com" className="text-gray-300 hover:text-yellow-400">support@akotro.com</Link></li>
-              <li><Link href="tel:+917900179710" className="text-gray-300 hover:text-yellow-400">+91 79001 79710</Link></li>
+                  <li><Link href="mailto:support@akotro.com" className="text-gray-300 hover:text-[#fdd835]">support@akotro.com</Link></li>
+              <li><Link href="tel:+917900179710" className="text-gray-300 hover:text-[#fdd835]">+91 79001 79710</Link></li>
               <li className="text-gray-400">Mumbai, India</li>
               <li className="text-gray-400">Mon-Sat: 11am-6pm IST</li>
             </ul>
@@ -71,9 +71,9 @@ export default function Footer() {
 
         {/* Social Links */}
         <div className="flex gap-4">
-          <Link href="https://www.instagram.com/akotro_official/" target="_blank" rel="noopener noreferrer" className="text-gray-300 hover:text-yellow-400 text-sm">Instagram</Link>
-          <Link href="https://wa.me/917900179710" target="_blank" rel="noopener noreferrer" className="text-gray-300 hover:text-yellow-400 text-sm">WhatsApp</Link>
-          <Link href="https://www.facebook.com/people/Akotro/61551014469085/" target="_blank" rel="noopener noreferrer" className="text-gray-300 hover:text-yellow-400 text-sm">Facebook</Link>
+          <Link href="https://www.instagram.com/akotro_official/" target="_blank" rel="noopener noreferrer" className="text-gray-300 hover:text-[#fdd835] text-sm">Instagram</Link>
+          <Link href="https://wa.me/917900179710" target="_blank" rel="noopener noreferrer" className="text-gray-300 hover:text-[#fdd835] text-sm">WhatsApp</Link>
+          <Link href="https://www.facebook.com/people/Akotro/61551014469085/" target="_blank" rel="noopener noreferrer" className="text-gray-300 hover:text-[#fdd835] text-sm">Facebook</Link>
         </div>
           </div>
         </div>

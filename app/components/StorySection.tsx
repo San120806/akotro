@@ -15,15 +15,15 @@ export default function StorySection() {
           
           {/* Content */}
           <div>
-            <p className="text-red-600 font-bold text-xs uppercase mb-2">HOW IT STARTED</p>
+            <p className="text-[#880808] font-bold text-xs uppercase mb-2">HOW IT STARTED</p>
             <h2 className="text-3xl font-bold text-black mb-4">A simple question: Why is stationery not sustainable?</h2>
             <p className="text-black text-sm leading-relaxed mb-6">
               We started with a simple question: Why aren't stationary products being made with environmental consciousness? Most of the stationery we use today is made from virgin plastic, contributing to pollution and waste. We realized that even small everyday items like pens and pencils could be redesigned to be sustainable without compromising on quality or aesthetics.
             </p>
             <div className="flex gap-2 flex-wrap">
-              <span className="bg-yellow-300 text-black text-xs px-3 py-1 rounded font-bold">SUSTAINABLE</span>
-              <span className="bg-yellow-300 text-black text-xs px-3 py-1 rounded font-bold">ZERO WASTE</span>
-              <span className="bg-yellow-300 text-black text-xs px-3 py-1 rounded font-bold">ECO-FRIENDLY</span>
+              <span className="bg-[#fdd835] text-black text-xs px-3 py-1 rounded font-bold">SUSTAINABLE</span>
+              <span className="bg-[#fdd835] text-black text-xs px-3 py-1 rounded font-bold">ZERO WASTE</span>
+              <span className="bg-[#fdd835] text-black text-xs px-3 py-1 rounded font-bold">ECO-FRIENDLY</span>
             </div>
           </div>
         </div>
@@ -32,15 +32,15 @@ export default function StorySection() {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center mb-20">
           {/* Content */}
           <div>
-            <p className="text-red-600 font-bold text-xs uppercase mb-2">HOW WE MAKE IT</p>
+            <p className="text-[#880808] font-bold text-xs uppercase mb-2">HOW WE MAKE IT</p>
             <h2 className="text-3xl font-bold text-black mb-4">Paper collected. Pencils hand-rolled.</h2>
             <p className="text-black text-sm leading-relaxed mb-6">
               Every Akotro product starts with waste paper — discarded newspapers, kraft offcuts, and colored sheets that would otherwise end up in landfills. We collect these materials and transform them into beautiful, functional stationery. Our skilled artisans hand-roll each pencil with precision, ensuring quality and sustainability in every step of the process.
             </p>
             <div className="flex gap-2 flex-wrap">
-              <span className="bg-yellow-300 text-black text-xs px-3 py-1 rounded font-bold">HANDMADE</span>
-              <span className="bg-yellow-300 text-black text-xs px-3 py-1 rounded font-bold">ARTISAN-CRAFTED</span>
-              <span className="bg-yellow-300 text-black text-xs px-3 py-1 rounded font-bold">UPCYCLED</span>
+              <span className="bg-[#fdd835] text-black text-xs px-3 py-1 rounded font-bold">HANDMADE</span>
+              <span className="bg-[#fdd835] text-black text-xs px-3 py-1 rounded font-bold">ARTISAN-CRAFTED</span>
+              <span className="bg-[#fdd835] text-black text-xs px-3 py-1 rounded font-bold">UPCYCLED</span>
             </div>
           </div>
           
@@ -67,15 +67,15 @@ export default function StorySection() {
           
           {/* Content */}
           <div>
-            <p className="text-red-600 font-bold text-xs uppercase mb-2">WHY IT MATTERS</p>
+            <p className="text-[#880808] font-bold text-xs uppercase mb-2">WHY IT MATTERS</p>
             <h2 className="text-3xl font-bold text-black mb-4">Every pen supports a livelihood.</h2>
             <p className="text-black text-sm leading-relaxed mb-6">
               Beyond environmental impact, our mission is to create meaningful opportunities for artisan communities. Every product sold directly supports the women and artisans who craft them, enabling them to build sustainable livelihoods. By choosing Akotro, you're not just making an eco-conscious choice — you're supporting people and building a more equitable, sustainable future.
             </p>
             <div className="flex gap-2 flex-wrap">
-              <span className="bg-yellow-300 text-black text-xs px-3 py-1 rounded font-bold">WOMEN-EMPOWERED</span>
-              <span className="bg-yellow-300 text-black text-xs px-3 py-1 rounded font-bold">COMMUNITY</span>
-              <span className="bg-yellow-300 text-black text-xs px-3 py-1 rounded font-bold">IMPACT</span>
+              <span className="bg-[#fdd835] text-black text-xs px-3 py-1 rounded font-bold">WOMEN-EMPOWERED</span>
+              <span className="bg-[#fdd835] text-black text-xs px-3 py-1 rounded font-bold">COMMUNITY</span>
+              <span className="bg-[#fdd835] text-black text-xs px-3 py-1 rounded font-bold">IMPACT</span>
             </div>
           </div>
         </div>

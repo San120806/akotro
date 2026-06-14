@@ -5,7 +5,7 @@ import Footer from '@/app/components/Footer';
 
 export default function ShippingReturnsPage() {
   return (
-    <div style={{ background: '#FDF4BE', minHeight: '100vh', fontFamily: "'Inter', sans-serif" }}>
+    <div style={{ background: '#fffde8', minHeight: '100vh', fontFamily: "'Inter', sans-serif" }}>
       <style>{`
         @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap');
         * { box-sizing: border-box; }
@@ -20,7 +20,7 @@ export default function ShippingReturnsPage() {
           font-size: 10px;
           font-weight: 800;
           letter-spacing: .15em;
-          color: #FDD734;
+          color: #fdd835;
           text-transform: uppercase;
           margin-bottom: 14px;
         }
@@ -32,7 +32,7 @@ export default function ShippingReturnsPage() {
           margin: 0 0 16px;
           letter-spacing: -0.02em;
         }
-        .policy-hero-title span { color: #FDD734; }
+        .policy-hero-title span { color: #fdd835; }
         .policy-hero-sub {
           font-size: 15px;
           color: rgba(255,255,255,.55);
@@ -62,13 +62,13 @@ export default function ShippingReturnsPage() {
           color: #111;
           margin: 0 0 24px;
           padding-bottom: 16px;
-          border-bottom: 2px solid #FDD734;
+          border-bottom: 2px solid #fdd835;
         }
 
         .policy-subsection-title {
           font-size: 16px;
           font-weight: 800;
-          color: #C0392B;
+          color: #880808;
           margin: 32px 0 16px;
           letter-spacing: 0.05em;
           text-transform: uppercase;
@@ -163,7 +163,7 @@ export default function ShippingReturnsPage() {
         }
         .faq-help-wa:hover { background: #1ebe5d; }
         .faq-help-mail {
-          background: #FDD734;
+          background: #fdd835;
           color: #111;
           font-size: 12px;
           font-weight: 800;

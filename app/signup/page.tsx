@@ -39,7 +39,7 @@ export default function SignupPage() {
   };
 
   return (
-    <div className="min-h-screen bg-[#FDF4BE] flex items-center justify-center px-4 py-12">
+    <div className="min-h-screen bg-[#fffde8] flex items-center justify-center px-4 py-12">
       <div className="w-full max-w-md">
         <div className="text-center mb-8">
           <Link href="/">
@@ -55,26 +55,26 @@ export default function SignupPage() {
           <form onSubmit={handleSubmit} className="space-y-5">
             <div>
               <label className="block text-sm font-bold text-gray-700 mb-1">Full Name</label>
-              <input type="text" value={name} onChange={(e) => setName(e.target.value)} required className="w-full px-4 py-3 border border-gray-300 rounded-lg text-black focus:border-[#A40000] focus:ring-1 focus:ring-[#A40000] bg-white" />
+              <input type="text" value={name} onChange={(e) => setName(e.target.value)} required className="w-full px-4 py-3 border border-gray-300 rounded-lg text-black focus:border-[#880808] focus:ring-1 focus:ring-[#880808] bg-white" />
             </div>
 
             <div>
               <label className="block text-sm font-bold text-gray-700 mb-1">Email Address</label>
-              <input type="email" value={email} onChange={(e) => setEmail(e.target.value)} required className="w-full px-4 py-3 border border-gray-300 rounded-lg text-black focus:border-[#A40000] focus:ring-1 focus:ring-[#A40000] bg-white" />
+              <input type="email" value={email} onChange={(e) => setEmail(e.target.value)} required className="w-full px-4 py-3 border border-gray-300 rounded-lg text-black focus:border-[#880808] focus:ring-1 focus:ring-[#880808] bg-white" />
             </div>
 
             <div>
               <label className="block text-sm font-bold text-gray-700 mb-1">Password</label>
-              <input type="password" value={password} onChange={(e) => setPassword(e.target.value)} required className="w-full px-4 py-3 border border-gray-300 rounded-lg text-black focus:border-[#A40000] focus:ring-1 focus:ring-[#A40000] bg-white" />
+              <input type="password" value={password} onChange={(e) => setPassword(e.target.value)} required className="w-full px-4 py-3 border border-gray-300 rounded-lg text-black focus:border-[#880808] focus:ring-1 focus:ring-[#880808] bg-white" />
             </div>
 
-            <button type="submit" disabled={isLoading} className="w-full bg-[#A40000] text-white py-3 rounded-lg font-bold text-sm hover:bg-red-800 transition-colors shadow-md mt-2">
+            <button type="submit" disabled={isLoading} className="w-full bg-[#880808] text-white py-3 rounded-lg font-bold text-sm hover:bg-[#5a0505] transition-colors shadow-md mt-2">
               {isLoading ? 'Creating account...' : 'CREATE ACCOUNT'}
             </button>
           </form>
 
           <p className="text-center text-sm text-gray-500 mt-6">
-            Already have an account? <Link href="/login" className="text-[#A40000] font-bold hover:underline">Sign in</Link>
+            Already have an account? <Link href="/login" className="text-[#880808] font-bold hover:underline">Sign in</Link>
           </p>
         </div>
       </div>

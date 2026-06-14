@@ -112,7 +112,7 @@ export default function FAQPage() {
   const toggle = (id: string) => setOpenId(openId === id ? null : id);
 
   return (
-    <div style={{ background: '#FDF4BE', minHeight: '100vh', fontFamily: "'Inter', sans-serif" }}>
+    <div style={{ background: '#fffde8', minHeight: '100vh', fontFamily: "'Inter', sans-serif" }}>
       <style>{`
         @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap');
         * { box-sizing: border-box; }
@@ -127,7 +127,7 @@ export default function FAQPage() {
           font-size: 10px;
           font-weight: 800;
           letter-spacing: .15em;
-          color: #FDD734;
+          color: #fdd835;
           text-transform: uppercase;
           margin-bottom: 14px;
         }
@@ -139,7 +139,7 @@ export default function FAQPage() {
           margin: 0 0 16px;
           letter-spacing: -0.02em;
         }
-        .faq-hero-title span { color: #FDD734; }
+        .faq-hero-title span { color: #fdd835; }
         .faq-hero-sub {
           font-size: 15px;
           color: rgba(255,255,255,.55);
@@ -150,7 +150,7 @@ export default function FAQPage() {
         /* ── Category tabs ── */
         .faq-tabs-wrap {
           background: #fff;
-          border-bottom: 2px solid #FDD734;
+          border-bottom: 2px solid #fdd835;
           position: sticky;
           top: 0;
           z-index: 30;
@@ -183,7 +183,7 @@ export default function FAQPage() {
           margin-bottom: -2px;
         }
         .faq-tab:hover { color: #111; }
-        .faq-tab.active { color: #C0392B; border-bottom-color: #C0392B; }
+        .faq-tab.active { color: #880808; border-bottom-color: #880808; }
 
         /* ── FAQ list ── */
         .faq-body {
@@ -195,7 +195,7 @@ export default function FAQPage() {
           font-size: 9px;
           font-weight: 800;
           letter-spacing: .15em;
-          color: #C0392B;
+          color: #880808;
           text-transform: uppercase;
           margin: 40px 0 16px;
           padding-bottom: 8px;
@@ -212,7 +212,7 @@ export default function FAQPage() {
           transition: box-shadow .2s;
         }
         .faq-item:hover { box-shadow: 0 4px 20px rgba(0,0,0,.07); }
-        .faq-item.open { background: #FFFDE8; border-color: #C0392B; }
+        .faq-item.open { background: #FFFDE8; border-color: #880808; }
 
         .faq-trigger {
           width: 100%;
@@ -229,7 +229,7 @@ export default function FAQPage() {
         .faq-num {
           min-width: 80px;
           height: 72px;
-          background: #C0392B;
+          background: #880808;
           display: flex;
           align-items: center;
           justify-content: center;
@@ -266,7 +266,7 @@ export default function FAQPage() {
         }
         .faq-item.open .faq-chevron {
           transform: rotate(180deg);
-          color: #C0392B;
+          color: #880808;
         }
 
         .faq-answer {
@@ -333,7 +333,7 @@ export default function FAQPage() {
         }
         .faq-help-wa:hover { background: #1ebe5d; }
         .faq-help-mail {
-          background: #FDD734;
+          background: #fdd835;
           color: #111;
           font-size: 12px;
           font-weight: 800;

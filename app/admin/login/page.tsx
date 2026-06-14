@@ -39,7 +39,7 @@ export default function AdminLoginPage() {
               value={password}
               onChange={(e) => setPassword(e.target.value)}
               placeholder="Enter admin password"
-              className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-red-600"
+              className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#880808]"
               required
             />
           </div>
@@ -47,13 +47,13 @@ export default function AdminLoginPage() {
           <button
             type="submit"
             disabled={loading}
-            className="w-full bg-red-600 text-white py-2 rounded-lg font-bold hover:bg-red-700 disabled:bg-gray-400 disabled:cursor-not-allowed"
+            className="w-full bg-[#880808] text-white py-2 rounded-lg font-bold hover:bg-[#6b0606] disabled:bg-gray-400 disabled:cursor-not-allowed"
           >
             {loading ? 'Logging in...' : 'Login'}
           </button>
         </form>
 
-        <div className="mt-6 p-4 bg-yellow-100 rounded-lg text-sm">
+        <div className="mt-6 p-4 bg-[#fdd835]/30 rounded-lg text-sm">
           <p className="text-gray-700">
             <strong>Demo Password:</strong> admin123
           </p>

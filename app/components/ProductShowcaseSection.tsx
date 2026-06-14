@@ -99,12 +99,12 @@ export default function ProductShowcaseSection() {
         {/* Header */}
         <div className="flex flex-col md:flex-row justify-between items-start mb-12">
           <div className="mb-4 md:mb-0">
-            <p className="text-red-600 font-bold text-sm mb-2">OUR PRODUCTS</p>
+            <p className="text-[#880808] font-bold text-sm mb-2">OUR PRODUCTS</p>
             <h2 className="text-3xl md:text-4xl font-bold">
-              <span className="text-black">Made from Recycled Paper.</span> <span className="text-red-600 block md:inline">Zero Plastic.</span>
+              <span className="text-black">Made from Recycled Paper.</span> <span className="text-[#880808] block md:inline">Zero Plastic.</span>
             </h2>
           </div>
-          <Link href="/shop" className="text-red-600 font-bold text-sm hover:underline">
+          <Link href="/shop" className="text-[#880808] font-bold text-sm hover:underline">
             VIEW ALL 18 →
           </Link>
         </div>
@@ -113,7 +113,7 @@ export default function ProductShowcaseSection() {
         <div className="flex flex-wrap gap-4 mb-8 items-center">
           <button
             onClick={() => setActiveTab('hero')}
-            className="px-6 py-3 rounded-full bg-red-600 text-white text-sm font-bold hover:bg-red-700 shadow-md transition-colors whitespace-nowrap"
+            className="px-6 py-3 rounded-full bg-[#880808] text-white text-sm font-bold hover:bg-[#6b0606] shadow-md transition-colors whitespace-nowrap"
           >
              OUR SIGNATURE COLLECTION
           </button>
@@ -136,14 +136,14 @@ export default function ProductShowcaseSection() {
                 
                 {/* Badge */}
                 <div className="absolute top-3 left-3">
-                  <span className="inline-block bg-yellow-300 text-black px-3 py-1 rounded-full text-xs font-bold shadow-md">
+                  <span className="inline-block bg-[#fdd835] text-black px-3 py-1 rounded-full text-xs font-bold shadow-md">
                     {product.badge}
                   </span>
                 </div>
 
                 {/* Discount Badge */}
                 <div className="absolute top-3 right-3">
-                  <span className="inline-block bg-red-600 text-white px-3 py-1 rounded-lg text-xs font-bold shadow-md">
+                  <span className="inline-block bg-[#880808] text-white px-3 py-1 rounded-lg text-xs font-bold shadow-md">
                     {product.discount}% OFF
                   </span>
                 </div>
@@ -155,8 +155,8 @@ export default function ProductShowcaseSection() {
                   title={isFavorite(String(product.id)) ? "Remove from Wishlist" : "Add to Wishlist"}
                 >
                   <svg
-                    fill={isFavorite(String(product.id)) ? "#C0392B" : "none"}
-                    stroke="#C0392B"
+                    fill={isFavorite(String(product.id)) ? "#880808" : "none"}
+                    stroke="#880808"
                     viewBox="0 0 24 24"
                     className="w-4 h-4 transition-colors duration-200"
                   >
@@ -185,7 +185,7 @@ export default function ProductShowcaseSection() {
                 </div>
 
                 {/* Save Info */}
-                <p className="text-xs text-red-600 font-bold mb-4">Save ₹{product.save}</p>
+                <p className="text-xs text-[#880808] font-bold mb-4">Save ₹{product.save}</p>
 
                 {/* Add to Cart Button */}
                 <button
@@ -193,7 +193,7 @@ export default function ProductShowcaseSection() {
                   className={`w-full px-4 py-3 rounded-lg text-xs font-bold shadow-md transition-colors whitespace-nowrap mt-auto ${
                     addedIds.includes(product.id)
                       ? 'bg-green-600 text-white'
-                      : 'bg-red-600 text-white hover:bg-red-700'
+                      : 'bg-[#880808] text-white hover:bg-[#6b0606]'
                   }`}
                 >
                   {addedIds.includes(product.id) ? '✓ ADDED TO CART!' : 'ADD TO CART'}
@@ -233,7 +233,7 @@ export default function ProductShowcaseSection() {
                 </button>
                 <button 
                   onClick={() => router.push('/cart')}
-                  className="flex-1 px-6 py-3 bg-[#A40000] text-white font-bold rounded-lg hover:bg-red-800 transition-colors shadow-md"
+                  className="flex-1 px-6 py-3 bg-[#880808] text-white font-bold rounded-lg hover:bg-[#5a0505] transition-colors shadow-md"
                 >
                   VIEW CART
                 </button>

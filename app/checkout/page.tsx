@@ -176,7 +176,7 @@ export default function CheckoutPage() {
     <div>
       <Header />
 
-      <section className="bg-yellow-400 py-12">
+      <section className="bg-[#fdd835] py-12">
         <div className="max-w-7xl mx-auto px-4">
           <h1 className="text-4xl font-bold">CHECKOUT</h1>
         </div>
@@ -289,13 +289,13 @@ export default function CheckoutPage() {
 
               <div className="flex justify-between font-bold text-xl mb-6">
                 <span>Total</span>
-                <span className="text-red-600">₹{total.toFixed(2)}</span>
+                <span className="text-[#880808]">₹{total.toFixed(2)}</span>
               </div>
 
               <button
                 onClick={handlePayment}
                 disabled={loading}
-                className="w-full bg-red-600 text-white py-3 rounded font-bold hover:bg-red-700 disabled:bg-gray-400 disabled:cursor-not-allowed"
+                className="w-full bg-[#880808] text-white py-3 rounded font-bold hover:bg-[#6b0606] disabled:bg-gray-400 disabled:cursor-not-allowed"
               >
                 {loading ? 'Processing...' : `PAY ₹${total.toFixed(2)}`}
               </button>

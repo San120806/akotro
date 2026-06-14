@@ -106,7 +106,7 @@ export default function ProductPage() {
   };
 
   if (isLoading) return (
-    <div style={{ background: '#FDF4BE', minHeight: '100vh' }}>
+    <div style={{ background: '#fffde8', minHeight: '100vh' }}>
       <Header />
       <div style={{ textAlign: 'center', padding: '80px 20px' }}>
         <p style={{ fontSize: 18, marginBottom: 16 }}>Loading product...</p>
@@ -116,11 +116,11 @@ export default function ProductPage() {
   );
 
   if (!product) return (
-    <div style={{ background: '#FDF4BE', minHeight: '100vh' }}>
+    <div style={{ background: '#fffde8', minHeight: '100vh' }}>
       <Header />
       <div style={{ textAlign: 'center', padding: '80px 20px' }}>
         <p style={{ fontSize: 18, marginBottom: 16 }}>Product not found.</p>
-        <Link href="/shop" style={{ color: '#C0392B', fontWeight: 700 }}>← Back to Shop</Link>
+        <Link href="/shop" style={{ color: '#880808', fontWeight: 700 }}>← Back to Shop</Link>
       </div>
       <Footer />
     </div>
@@ -128,12 +128,12 @@ export default function ProductPage() {
 
 
   return (
-    <div style={{ background: '#FDF4BE', minHeight: '100vh', fontFamily: "'Inter', sans-serif" }}>
+    <div style={{ background: '#fffde8', minHeight: '100vh', fontFamily: "'Inter', sans-serif" }}>
       <style>{`
         @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap');
         * { box-sizing: border-box; }
 
-        .bc { background: #FDF4BE; padding: 15px 0; border-bottom: 2px solid #FDD734; }
+        .bc { background: #fffde8; padding: 15px 0; border-bottom: 2px solid #fdd835; }
         .bc-inner { max-width: 1200px; margin: 0 auto; padding: 0 28px; font-size: 11px; color: #999; display: flex; gap: 8px; align-items: center; letter-spacing: .05em; font-weight: 500; }
         .bc-inner a { color: #999; text-decoration: none; }
         .bc-inner a:hover { color: #111; }
@@ -144,31 +144,31 @@ export default function ProductPage() {
         .img-main { position: relative; width: 100%; aspect-ratio: 1 / 1; background: transparent; overflow: hidden; border-radius: 4px; }
         .img-main img { width:100%; height:100%; object-fit:cover; }
         .img-eco-badge { position: absolute; top: 16px; left: 16px; background: rgba(0,0,0,.7); color: #fff; font-size: 9px; font-weight: 800; padding: 5px 12px; border-radius: 4px; letter-spacing: .1em; z-index: 2; }
-        .img-sale-badge { position: absolute; top: 16px; right: 16px; background: #C0392B; color: #fff; font-size: 9px; font-weight: 800; padding: 5px 12px; border-radius: 4px; z-index: 2; }
+        .img-sale-badge { position: absolute; top: 16px; right: 16px; background: #880808; color: #fff; font-size: 9px; font-weight: 800; padding: 5px 12px; border-radius: 4px; z-index: 2; }
         .img-back { position: absolute; bottom: 16px; right: 16px; background: rgba(255,255,255,.9); border: none; font-size: 10px; font-weight: 700; padding: 6px 12px; cursor: pointer; border-radius: 4px; color: #555; z-index: 2; }
         .thumbs { display: flex; gap: 12px; margin-top: 12px; }
         .thumb { position: relative; width: 70px; height: 70px; background: transparent; overflow: hidden; cursor: pointer; border: 2px solid transparent; transition: border-color .2s; border-radius: 4px; }
-        .thumb.active { border-color: #FDD734; }
+        .thumb.active { border-color: #fdd835; }
 
         .pdp-cat-row { display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px; }
-        .pdp-cat { font-size: 12px; font-weight: 800; letter-spacing: .1em; color: #C0392B; text-transform: uppercase; }
+        .pdp-cat { font-size: 12px; font-weight: 800; letter-spacing: .1em; color: #880808; text-transform: uppercase; }
         .pdp-sku { font-size: 10px; color: #999; letter-spacing: .05em; }
         .pdp-name { font-size: 36px; font-weight: 400; color: #111; line-height: 1.1; margin: 0 0 12px; letter-spacing: -0.02em; }
         .stars { display: flex; align-items: center; gap: 8px; margin-bottom: 24px; }
-        .stars-icons { color: #C0392B; font-size: 14px; letter-spacing: 1px; }
+        .stars-icons { color: #880808; font-size: 14px; letter-spacing: 1px; }
         .stars-score { font-size: 12px; font-weight: 800; color: #111; }
         .stars-reviews { font-size: 12px; color: #777; }
-        .stars-link { font-size: 12px; color: #C0392B; text-decoration: underline; cursor: pointer; }
+        .stars-link { font-size: 12px; color: #880808; text-decoration: underline; cursor: pointer; }
 
         .price-row { display: flex; align-items: baseline; gap: 12px; margin-bottom: 6px; }
         .pdp-price { font-size: 26px; font-weight: 400; color: #111; }
         .pdp-orig { font-size: 16px; color: #aaa; text-decoration: line-through; }
-        .save-pill { background: #FDE8E8; color: #C0392B; font-size: 10px; font-weight: 800; padding: 4px 10px; border-radius: 4px; letter-spacing: .05em; }
+        .save-pill { background: #FDE8E8; color: #880808; font-size: 10px; font-weight: 800; padding: 4px 10px; border-radius: 4px; letter-spacing: .05em; }
         .pdp-delivery { font-size: 11px; color: #777; margin: 0 0 24px; }
 
         .tags-row { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 28px; }
-        .tag-pill { background: #fff; border: 1px solid #E5DFB3; border-radius: 4px; font-size: 9px; font-weight: 800; color: #C0392B; padding: 6px 12px; letter-spacing: .05em; display: flex; align-items: center; gap: 5px; }
-        .tag-pill::before { content: '●'; font-size: 8px; color: #C0392B; }
+        .tag-pill { background: #fff; border: 1px solid #E5DFB3; border-radius: 4px; font-size: 9px; font-weight: 800; color: #880808; padding: 6px 12px; letter-spacing: .05em; display: flex; align-items: center; gap: 5px; }
+        .tag-pill::before { content: '●'; font-size: 8px; color: #880808; }
 
         .qty-row { display: flex; align-items: center; gap: 16px; margin-bottom: 24px; }
         .qty-label { font-size: 10px; font-weight: 800; color: #777; letter-spacing: .1em; text-transform: uppercase; }
@@ -185,8 +185,8 @@ export default function ProductPage() {
         @media(max-width: 600px) {
           .trust-row { grid-template-columns: repeat(2,1fr); }
         }
-        .trust-item { display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 6px; padding: 16px 8px; background: #FDF4BE; }
-        .trust-item svg { width: 20px; height: 20px; color: #C0392B; }
+        .trust-item { display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 6px; padding: 16px 8px; background: #fffde8; }
+        .trust-item svg { width: 20px; height: 20px; color: #880808; }
         .trust-item-label { font-size: 9px; font-weight: 800; color: #111; text-align: center; line-height: 1.2; }
         .trust-item-sub { font-size: 8px; color: #999; text-align: center; }
 
@@ -211,13 +211,13 @@ export default function ProductPage() {
         .feat-col-title { font-size: 9px; font-weight: 800; letter-spacing: .1em; color: #999; text-transform: uppercase; margin-bottom: 16px; }
         .feat-list { list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 12px; }
         .feat-list li { font-size: 11.5px; color: #444; line-height: 1.6; padding-left: 12px; position: relative; }
-        .feat-list li::before { content: '●'; position: absolute; left: 0; color: #C0392B; font-size: 6px; top: 6px; }
+        .feat-list li::before { content: '●'; position: absolute; left: 0; color: #880808; font-size: 6px; top: 6px; }
 
         .reviews-list { display: flex; flex-direction: column; gap: 28px; max-width: 700px; }
         .review-card { border-bottom: 1px solid #E5DFB3; padding-bottom: 28px; }
         .review-card:last-child { border-bottom: none; }
         .review-head { display: flex; align-items: center; gap: 12px; margin-bottom: 12px; }
-        .review-stars { color: #C0392B; font-size: 14px; letter-spacing: 2px; }
+        .review-stars { color: #880808; font-size: 14px; letter-spacing: 2px; }
         .review-date { font-size: 11px; color: #999; }
         .review-text { font-size: 14px; color: #333; line-height: 1.6; margin: 0 0 12px; font-style: italic; }
         .review-author { font-size: 11px; font-weight: 800; color: #111; display: flex; align-items: center; gap: 8px; }
@@ -229,22 +229,22 @@ export default function ProductPage() {
         .related-eyebrow { font-size: 9px; font-weight: 800; letter-spacing: .1em; color: #999; text-transform: uppercase; margin-bottom: 8px; }
         .related-title { font-size: 32px; font-weight: 400; color: #111; margin-bottom: 0; }
         .related-title em { font-style: italic; }
-        .related-view { font-size: 10px; font-weight: 800; color: #C0392B; text-decoration: none; letter-spacing: .1em; }
+        .related-view { font-size: 10px; font-weight: 800; color: #880808; text-decoration: none; letter-spacing: .1em; }
         .related-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 24px; }
         @media(max-width:700px) { .related-grid { grid-template-columns: 1fr; } }
         .rcard { border-radius: 8px; overflow: hidden; border: 1px solid rgba(0,0,0,.05); background: #fff; cursor: pointer; display: flex; flex-direction: column; transition: transform .2s, box-shadow .2s; }
         .rcard:hover { transform: translateY(-4px); box-shadow: 0 12px 32px rgba(0,0,0,.08); }
         .rcard-img { height: 220px; position: relative; background: #f8f8f8; }
         .rcard-img img { object-fit: cover; }
-        .rcard-badge { position: absolute; top: 12px; left: 12px; font-size: 8px; font-weight: 800; padding: 4px 8px; border-radius: 4px; color: #fff; background: #C0392B; letter-spacing: .05em; }
-        .rcard-off { position: absolute; top: 12px; right: 12px; background: #C0392B; color: #fff; font-size: 8px; font-weight: 800; padding: 4px 8px; border-radius: 4px; letter-spacing: .05em; }
+        .rcard-badge { position: absolute; top: 12px; left: 12px; font-size: 8px; font-weight: 800; padding: 4px 8px; border-radius: 4px; color: #fff; background: #880808; letter-spacing: .05em; }
+        .rcard-off { position: absolute; top: 12px; right: 12px; background: #880808; color: #fff; font-size: 8px; font-weight: 800; padding: 4px 8px; border-radius: 4px; letter-spacing: .05em; }
         .rcard-body { padding: 16px; flex: 1; display: flex; flex-direction: column; }
-        .rcard-cat { font-size: 8px; font-weight: 800; color: #C0392B; letter-spacing: .1em; text-transform: uppercase; margin-bottom: 6px; }
+        .rcard-cat { font-size: 8px; font-weight: 800; color: #880808; letter-spacing: .1em; text-transform: uppercase; margin-bottom: 6px; }
         .rcard-name { font-size: 14px; font-weight: 700; color: #111; margin-bottom: 16px; flex: 1; }
         .rcard-foot { display: flex; justify-content: space-between; align-items: flex-end; }
         .rcard-price { font-size: 16px; font-weight: 800; color: #111; }
         .rcard-orig { font-size: 11px; color: #aaa; text-decoration: line-through; margin-left: 6px; font-weight: 500; }
-        .rcard-btn { width: 28px; height: 28px; background: #FDD734; border: none; border-radius: 4px; cursor: pointer; display: flex; align-items: center; justify-content: center; font-size: 16px; font-weight: 800; color: #111; }
+        .rcard-btn { width: 28px; height: 28px; background: #fdd835; border: none; border-radius: 4px; cursor: pointer; display: flex; align-items: center; justify-content: center; font-size: 16px; font-weight: 800; color: #111; }
         
         .floating-whatsapp { position: fixed; bottom: 30px; right: 30px; width: 56px; height: 56px; background: #25D366; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: #fff; box-shadow: 0 4px 14px rgba(37, 211, 102, 0.4); cursor: pointer; z-index: 99; transition: transform .2s; }
         .floating-whatsapp:hover { transform: scale(1.1); }
@@ -485,7 +485,7 @@ export default function ProductPage() {
                 <div className="rcard">
                   <div className="rcard-img">
                     <Image src={p.image} alt={p.name} fill style={{ objectFit: 'cover' }} sizes="400px" />
-                    {p.label && <span className="rcard-badge" style={{ background: '#C0392B' }}>{p.label}</span>}
+                    {p.label && <span className="rcard-badge" style={{ background: '#880808' }}>{p.label}</span>}
                     {p.badge && <span className="rcard-off">{p.badge}</span>}
                   </div>
                   <div className="rcard-body">
@@ -548,7 +548,7 @@ export default function ProductPage() {
                 </button>
                 <button 
                   onClick={() => router.push('/cart')}
-                  className="flex-1 px-6 py-3 bg-[#A40000] text-white font-bold rounded-lg hover:bg-red-800 transition-colors shadow-md"
+                  className="flex-1 px-6 py-3 bg-[#880808] text-white font-bold rounded-lg hover:bg-[#5a0505] transition-colors shadow-md"
                 >
                   VIEW CART
                 </button>

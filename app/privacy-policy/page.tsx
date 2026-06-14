@@ -9,10 +9,10 @@ export default function PrivacyPolicyPage() {
       <Header />
 
       {/* Hero Section */}
-      <section className="bg-yellow-400 py-12 px-4 border-b-2 border-yellow-500">
+      <section className="bg-[#fdd835] py-12 px-4 border-b-2 border-[#fdd835]">
         <div className="max-w-4xl mx-auto text-center">
           <h1
-            className="text-3xl md:text-5xl font-black uppercase tracking-widest text-[#A40000] mb-3"
+            className="text-3xl md:text-5xl font-black uppercase tracking-widest text-[#880808] mb-3"
             style={{ fontFamily: 'serif' }}
           >
             Privacy & Safety Policy
@@ -31,11 +31,11 @@ export default function PrivacyPolicyPage() {
             <p>
               This policy applies to all the <strong>AKOTRO</strong> platforms (the “Site” or “Web Site” or “Mobile Application” or “App” or “Us” or “We” or &quot;Social Media Platforms&quot;), which is operated and owned by AKOTRO, marketed and/or managed by Akotro. It is AKOTRO’s policy to comply with general laws for protecting user information and bank details shared for the purpose of availing AKOTRO services. This regulates the processing of information relating to you and grants you various rights in respect of your personal data.
             </p>
-            <p className="border-l-4 border-[#A40000] pl-4 font-semibold text-gray-900 bg-red-50 py-2">
+            <p className="border-l-4 border-[#880808] pl-4 font-semibold text-gray-900 bg-red-50 py-2">
               Any Images, Data or Files Uploaded on the website must not be used without the consent of the authorised personnel of the brand.
             </p>
             <p>
-              The Web Site contains links to other websites over which we have no control. AKOTRO is not responsible for the privacy policies or practices of other web sites to which you choose to link from <a href="https://www.akotro.com" className="text-[#A40000] hover:underline font-bold">akotro.com</a>. We encourage you to review the privacy policies of those other web sites so you can understand how they collect, use and share your information.
+              The Web Site contains links to other websites over which we have no control. AKOTRO is not responsible for the privacy policies or practices of other web sites to which you choose to link from <a href="https://www.akotro.com" className="text-[#880808] hover:underline font-bold">akotro.com</a>. We encourage you to review the privacy policies of those other web sites so you can understand how they collect, use and share your information.
             </p>
           </section>
 
@@ -44,13 +44,13 @@ export default function PrivacyPolicyPage() {
               We, Akotro, incorporated under the Companies Act, 2013 (hereinafter referred to as “Company”), having its registered office in Mumbai, Maharashtra, India, the creator of this Privacy Policy ensure our firm commitment to your privacy vis-à-vis the protection of your priceless information. In order to endow you with our uninterrupted use of services, we may collect and, in some circumstances, disclose information about you. To enhance better protection of your privacy we provide this notice explaining our information practices and the choices you can make about the way your information is collected and used.
             </p>
             <p>
-              All visitors to <a href="https://www.akotro.com" className="text-[#A40000] hover:underline font-bold">www.akotro.com</a> (Website) are advised to read and understand our Privacy Policy carefully, as by accessing the Website you agree to be bound by the terms and conditions of the Privacy Policy and consent to the collection, storage and use of information relating to you as provided herein.
+              All visitors to <a href="https://www.akotro.com" className="text-[#880808] hover:underline font-bold">www.akotro.com</a> (Website) are advised to read and understand our Privacy Policy carefully, as by accessing the Website you agree to be bound by the terms and conditions of the Privacy Policy and consent to the collection, storage and use of information relating to you as provided herein.
             </p>
-            <p className="bg-yellow-50 border border-yellow-200 p-4 rounded-lg text-xs md:text-sm text-yellow-800 font-medium">
+            <p className="bg-[#fdd835]/10 border border-yellow-200 p-4 rounded-lg text-xs md:text-sm text-yellow-800 font-medium">
               ⚠ If you do not agree with the terms and conditions of our Privacy Policy, including in relation to the manner of collection or use of your information, please do not use or access the Site.
             </p>
             <p>
-              If you have any questions or concerns regarding this privacy policy, you should contact our Customer Support Desk at <a href="tel:+917900179710" className="text-[#A40000] hover:underline font-bold">+91 79001 79710</a> between 12 noon to 5 pm or can mail us at <a href="mailto:support@akotro.com" className="text-[#A40000] hover:underline font-bold">support@akotro.com</a>.
+              If you have any questions or concerns regarding this privacy policy, you should contact our Customer Support Desk at <a href="tel:+917900179710" className="text-[#880808] hover:underline font-bold">+91 79001 79710</a> between 12 noon to 5 pm or can mail us at <a href="mailto:support@akotro.com" className="text-[#880808] hover:underline font-bold">support@akotro.com</a>.
             </p>
           </section>
 
@@ -61,18 +61,18 @@ export default function PrivacyPolicyPage() {
           </section>
 
           <section className="space-y-4">
-            <h2 className="text-xl font-bold text-[#A40000] uppercase" style={{ fontFamily: 'serif' }}>Definitions</h2>
+            <h2 className="text-xl font-bold text-[#880808] uppercase" style={{ fontFamily: 'serif' }}>Definitions</h2>
             <ul className="list-disc pl-6 space-y-2">
               <li><strong>“We”, “Our”, and “Us”</strong> shall mean and refer to the creators of this privacy policy.</li>
               <li><strong>“You”, “Your”, “Yourself” and “User”</strong> shall mean and refer to natural and legal individuals who use the Website.</li>
-              <li><strong>“Website”</strong> shall mean and refer to <a href="https://www.akotro.com" className="text-[#A40000] hover:underline">www.akotro.com</a> created by AKOTRO.</li>
+              <li><strong>“Website”</strong> shall mean and refer to <a href="https://www.akotro.com" className="text-[#880808] hover:underline">www.akotro.com</a> created by AKOTRO.</li>
               <li><strong>“Personal Information”</strong> shall mean and refer to any personally identifiable information that We may collect from You.</li>
               <li><strong>“Third Parties”</strong> refer to any website, company or individual apart from the User and the creator of the Website.</li>
             </ul>
           </section>
 
           <section className="space-y-4">
-            <h2 className="text-xl font-bold text-[#A40000] uppercase" style={{ fontFamily: 'serif' }}>Overview</h2>
+            <h2 className="text-xl font-bold text-[#880808] uppercase" style={{ fontFamily: 'serif' }}>Overview</h2>
             <p>
               We commit to respecting your online privacy data. We further recognise your need for appropriate protection and management of any personally identifiable information (“Personal Information“) you share with us. Information that is considered personal about you by us includes, but is not limited to, your name, address, email address, phone number or other contact information.
             </p>
@@ -93,7 +93,7 @@ export default function PrivacyPolicyPage() {
           </section>
 
           <section className="space-y-4">
-            <h2 className="text-xl font-bold text-[#A40000] uppercase" style={{ fontFamily: 'serif' }}>Notification of Modifications and Changes to the T&C and Privacy Policy</h2>
+            <h2 className="text-xl font-bold text-[#880808] uppercase" style={{ fontFamily: 'serif' }}>Notification of Modifications and Changes to the T&C and Privacy Policy</h2>
             <p>
               We reserve the right to change the Terms and Privacy Policy from time to time as we deem fit, without any intimation to you, and your continued use of the site will signify your acceptance of any amendment to these terms.
             </p>
@@ -103,7 +103,7 @@ export default function PrivacyPolicyPage() {
           </section>
 
           <section className="space-y-4">
-            <h2 className="text-xl font-bold text-[#A40000] uppercase" style={{ fontFamily: 'serif' }}>Information We Collect</h2>
+            <h2 className="text-xl font-bold text-[#880808] uppercase" style={{ fontFamily: 'serif' }}>Information We Collect</h2>
             <p>
               Our site’s online requisition form requires users to give us contact information (like your name, address, telephone number and email address), and demographic information (like your zip code/pin code). As a member, you are required to provide a valid email address at registration and choose a username or alias that represents your identity on our website. This information is compiled and analysed on an aggregated basis. This information may include the URL that you just came from (whether this URL is on the Site or not), which URL you next go to (whether this URL is on the Site or not), your computer browser information, your IP address, and other information associated with your interaction with the Site.
             </p>
@@ -139,7 +139,7 @@ export default function PrivacyPolicyPage() {
           </section>
 
           <section className="space-y-4">
-            <h2 className="text-xl font-bold text-[#A40000] uppercase" style={{ fontFamily: 'serif' }}>How Information Is Collected</h2>
+            <h2 className="text-xl font-bold text-[#880808] uppercase" style={{ fontFamily: 'serif' }}>How Information Is Collected</h2>
             <ul className="list-disc pl-6 space-y-1">
               <li>Before or at the time of collecting personal information, we will identify the purposes for which information is being collected.</li>
               <li>We will collect and use of personal information solely with the objective of fulfilling those purposes specified by us and for other compatible purposes, unless we obtain the consent of the individual concerned or as required by law.</li>
@@ -150,20 +150,20 @@ export default function PrivacyPolicyPage() {
           </section>
 
           <section className="space-y-4">
-            <h2 className="text-xl font-bold text-[#A40000] uppercase" style={{ fontFamily: 'serif' }}>Cookies</h2>
+            <h2 className="text-xl font-bold text-[#880808] uppercase" style={{ fontFamily: 'serif' }}>Cookies</h2>
             <p>
               We use data collection devices such as “cookies” on certain pages of our Websites. “Cookies” are small files sited on your hard drive that assist us in providing customised services. We also offer certain features that are only available through the use of a “cookie”. Cookies can also help us provide information, which is targeted to your interests. Cookies may be used to identify logged in or registered users.
             </p>
             <p>
-              Third party vendors including <a href="https://www.google.com" className="text-[#A40000] hover:underline">google.com</a> (“Google”) may use cookies to serve ads based on your visits to this Website. You may visit the website of the third party and choose to opt out of the use of cookies for interest-based advertising, if the third party offers such an option. You may choose to opt-out of the DoubleClick cookie that Google and its partners use for interest-based advertising by visiting Ads Settings. (Alternatively, you can direct users to opt out of a third-party vendor’s use of cookies for interest based advertising by visiting <a href="https://aboutads.info" className="text-[#A40000] hover:underline">aboutads.info</a>.)
+              Third party vendors including <a href="https://www.google.com" className="text-[#880808] hover:underline">google.com</a> (“Google”) may use cookies to serve ads based on your visits to this Website. You may visit the website of the third party and choose to opt out of the use of cookies for interest-based advertising, if the third party offers such an option. You may choose to opt-out of the DoubleClick cookie that Google and its partners use for interest-based advertising by visiting Ads Settings. (Alternatively, you can direct users to opt out of a third-party vendor’s use of cookies for interest based advertising by visiting <a href="https://aboutads.info" className="text-[#880808] hover:underline">aboutads.info</a>.)
             </p>
             <p>
-              The website also has enabled the Google Analytics Advertising, which allows Google to collect data about users on our website, in addition to Google advertising cookies and anonymous identifiers. You may choose to opt out of this by downloading and installing the Google Analytics opt-out add-on here: <a href="https://tools.google.com/dlpage/gaoptout/" className="text-[#A40000] hover:underline break-all">https://tools.google.com/dlpage/gaoptout/</a>.
+              The website also has enabled the Google Analytics Advertising, which allows Google to collect data about users on our website, in addition to Google advertising cookies and anonymous identifiers. You may choose to opt out of this by downloading and installing the Google Analytics opt-out add-on here: <a href="https://tools.google.com/dlpage/gaoptout/" className="text-[#880808] hover:underline break-all">https://tools.google.com/dlpage/gaoptout/</a>.
             </p>
           </section>
 
           <section className="space-y-4">
-            <h2 className="text-xl font-bold text-[#A40000] uppercase" style={{ fontFamily: 'serif' }}>External Links on Website</h2>
+            <h2 className="text-xl font-bold text-[#880808] uppercase" style={{ fontFamily: 'serif' }}>External Links on Website</h2>
             <p>
               The Website may include hyperlinks to other web sites or content or resources. We have no control over any websites or resources, which are provided by companies or persons other than Us.
             </p>
@@ -176,7 +176,7 @@ export default function PrivacyPolicyPage() {
           </section>
 
           <section className="space-y-4">
-            <h2 className="text-xl font-bold text-[#A40000] uppercase" style={{ fontFamily: 'serif' }}>Our Use of Your Information</h2>
+            <h2 className="text-xl font-bold text-[#880808] uppercase" style={{ fontFamily: 'serif' }}>Our Use of Your Information</h2>
             <p>
               Your contact information is also used to contact you when necessary. We use your IP address to help diagnose problems with our server, and to administer our Website. Your IP address is also used to help identify you and to gather broad demographic information. Finally, we may use your IP address to help protect our partners and ourselves from fraud. We will continue to enhance our security procedures as new technology becomes available. We will transfer information about you if We are acquired by or merged with another company. In this event, we will notify you by email or by putting a prominent notice on the site before information about you is transferred and becomes subject to a different privacy policy.
             </p>
@@ -186,7 +186,7 @@ export default function PrivacyPolicyPage() {
           </section>
 
           <section className="space-y-4">
-            <h2 className="text-xl font-bold text-[#A40000] uppercase" style={{ fontFamily: 'serif' }}>Confidentiality</h2>
+            <h2 className="text-xl font-bold text-[#880808] uppercase" style={{ fontFamily: 'serif' }}>Confidentiality</h2>
             <p>
               You further acknowledge that the Website may contain information which is designated confidential by Us and that you shall not disclose such information without our prior written consent.
             </p>
@@ -199,7 +199,7 @@ export default function PrivacyPolicyPage() {
           </section>
 
           <section className="space-y-4">
-            <h2 className="text-xl font-bold text-[#A40000] uppercase" style={{ fontFamily: 'serif' }}>Our Disclosure of Your Information</h2>
+            <h2 className="text-xl font-bold text-[#880808] uppercase" style={{ fontFamily: 'serif' }}>Our Disclosure of Your Information</h2>
             <p>
               Due to the existing regulatory environment, we cannot ensure that all of your private communications and other personally identifiable information will never be disclosed in ways not otherwise described in this Privacy Policy. By way of example (without limiting and foregoing), we may be forced to disclose information to the government, law enforcement agencies or third parties. Under certain circumstances, third parties may unlawfully intercept or access transmissions or private communications, or members may abuse or misuse your information that they collect from our Website. Therefore, although we use industry standard practices to protect your privacy, we do not promise, and you should not expect, that your personally identifiable information or private communications would always remain private.
             </p>
@@ -214,14 +214,14 @@ export default function PrivacyPolicyPage() {
           </section>
 
           <section className="space-y-4">
-            <h2 className="text-xl font-bold text-[#A40000] uppercase" style={{ fontFamily: 'serif' }}>Accessing and Reviewing Information</h2>
+            <h2 className="text-xl font-bold text-[#880808] uppercase" style={{ fontFamily: 'serif' }}>Accessing and Reviewing Information</h2>
             <p>
               Following registration, you can review and change the information you submitted each time except your display name. If you change any information we may keep track of your old information. You can change your registration information such as: name, address, city, state, zip code, country, phone number, and profile. We will retain in our files information you have requested to remove for certain circumstances, such as to resolve disputes, troubleshoot problems and enforce our terms and conditions. Further, such prior information is never completely removed from our databases due to technical and legal constraints, including stored ‘back up’ systems. Therefore, you should not expect that all of your personally identifiable information will be completely removed from our databases in response to your requests.
             </p>
           </section>
 
           <section className="space-y-4">
-            <h2 className="text-xl font-bold text-[#A40000] uppercase" style={{ fontFamily: 'serif' }}>Control of Your Password</h2>
+            <h2 className="text-xl font-bold text-[#880808] uppercase" style={{ fontFamily: 'serif' }}>Control of Your Password</h2>
             <p>
               When you sign up to become a Member, you will also be asked to choose a password. You are entirely responsible for maintaining the confidentiality of your password. It is important that you protect it against unauthorised access of your account and information by choosing your password carefully, and keeping your password and computer secure by signing out after using our services.
             </p>
@@ -231,28 +231,28 @@ export default function PrivacyPolicyPage() {
           </section>
 
           <section className="space-y-4">
-            <h2 className="text-xl font-bold text-[#A40000] uppercase" style={{ fontFamily: 'serif' }}>Other Information Collectors</h2>
+            <h2 className="text-xl font-bold text-[#880808] uppercase" style={{ fontFamily: 'serif' }}>Other Information Collectors</h2>
             <p>
               Except as otherwise expressly included in this Privacy Policy, this document only addresses the use and disclosure of information we collect from you. To the extent that you disclose your information to other parties, whether they are on our Websites or on other sites throughout the Internet, different rules may apply to their use or disclosure of the information you disclose to them. To the extent that we use third party advertisers, they adhere to their own privacy policies. Since we do not control the privacy policies of the third parties, you are subject to ask questions before you disclose your personal information to others.
             </p>
           </section>
 
           <section className="space-y-4">
-            <h2 className="text-xl font-bold text-[#A40000] uppercase" style={{ fontFamily: 'serif' }}>Security</h2>
+            <h2 className="text-xl font-bold text-[#880808] uppercase" style={{ fontFamily: 'serif' }}>Security</h2>
             <p>
               We treat data as an asset that must be protected against loss and unauthorized access. We employ many different security techniques to protect such data from unauthorized access by members inside and outside the company. We do not recommend transfer of sensitive information (such as credit card number) and bank account details via the Site to other Users. Users are recommended to do so offline, on the phone or via personal emails. We follow generally accepted industry standards to protect the personal information submitted to us, both during transmission and once We receive it. However, “perfect security” does not exist on the Internet. You therefore agree that any security breaches beyond the control of our standard security procedures are at your sole risk and discretion.
             </p>
           </section>
 
           <section className="space-y-4">
-            <h2 className="text-xl font-bold text-[#A40000] uppercase" style={{ fontFamily: 'serif' }}>Disclaimer</h2>
+            <h2 className="text-xl font-bold text-[#880808] uppercase" style={{ fontFamily: 'serif' }}>Disclaimer</h2>
             <p>
               We cannot ensure that all of your private communications and other personal information (including sensitive information like credit card information and bank account number) will never be disclosed in ways not otherwise described in this Privacy Policy. Therefore, although we are committed to protecting your privacy, we do not promise, and you should not expect, that your personal information will always remain private. As a user of the Site, you understand and agree that you assume all responsibility and risk for your use of the Site, the internet generally, and the documents you post or access and for your conduct on and off the Site.
             </p>
           </section>
 
           <section className="space-y-4">
-            <h2 className="text-xl font-bold text-[#A40000] uppercase" style={{ fontFamily: 'serif' }}>Disputes and Jurisdiction</h2>
+            <h2 className="text-xl font-bold text-[#880808] uppercase" style={{ fontFamily: 'serif' }}>Disputes and Jurisdiction</h2>
             <p>
               All disputes involving but not limited to rights conferred, compensation, refunds, and other claims through this policy will be resolved through a two-step Alternate Dispute Resolution mechanism.
             </p>
@@ -265,9 +265,9 @@ export default function PrivacyPolicyPage() {
           </section>
 
           <section className="space-y-4">
-            <h2 className="text-xl font-bold text-[#A40000] uppercase" style={{ fontFamily: 'serif' }}>Questions and Suggestions</h2>
+            <h2 className="text-xl font-bold text-[#880808] uppercase" style={{ fontFamily: 'serif' }}>Questions and Suggestions</h2>
             <p>
-              If you have any questions or concerns regarding this privacy policy, you should contact us by sending an e-mail to <a href="mailto:support@akotro.com" className="text-[#A40000] hover:underline font-bold">support@akotro.com</a>.
+              If you have any questions or concerns regarding this privacy policy, you should contact us by sending an e-mail to <a href="mailto:support@akotro.com" className="text-[#880808] hover:underline font-bold">support@akotro.com</a>.
             </p>
           </section>
 

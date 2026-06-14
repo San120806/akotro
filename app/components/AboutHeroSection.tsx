@@ -9,7 +9,7 @@ export default function AboutHeroSection() {
           <h1 className="text-4xl md:text-5xl font-bold mb-4 leading-tight text-black">
             एकत्र —
             <br />
-            <span className="text-red-600">Together.</span>
+            <span className="text-[#880808]">Together.</span>
           </h1>
           <p className="text-black mb-8 text-sm leading-relaxed">
             We are passionate about protecting the environment while providing top-quality paper stationery. Crafted from recycled paper by women artisans in Mumbai — changing spending patterns, one pen at a time.
@@ -20,15 +20,15 @@ export default function AboutHeroSection() {
                 SHOP OUR PRODUCTS →
               </button>
             </Link>
-            <button className="flex-1 w-full bg-red-600 text-white px-4 py-3 sm:py-2 rounded font-medium hover:bg-red-700 shadow-md whitespace-nowrap text-center">
+            <button className="flex-1 w-full bg-[#880808] text-white px-4 py-3 sm:py-2 rounded font-medium hover:bg-[#6b0606] shadow-md whitespace-nowrap text-center">
               BULK & CORPORATE
             </button>
           </div>
           <div className="flex flex-wrap gap-3 mt-8 text-xs">
-            <span className="bg-yellow-200 text-black px-3 py-1 rounded-full shadow-sm whitespace-nowrap">7-Day Delivery</span>
-            <span className="bg-yellow-200 text-black px-3 py-1 rounded-full shadow-sm whitespace-nowrap">Woman-led</span>
-            <span className="bg-yellow-200 text-black px-3 py-1 rounded-full shadow-sm whitespace-nowrap">1.5M Recycled</span>
-            <span className="bg-yellow-200 text-black px-3 py-1 rounded-full shadow-sm whitespace-nowrap">+ 5K Inspired</span>
+            <span className="bg-[#fdd835]/60 text-black px-3 py-1 rounded-full shadow-sm whitespace-nowrap">7-Day Delivery</span>
+            <span className="bg-[#fdd835]/60 text-black px-3 py-1 rounded-full shadow-sm whitespace-nowrap">Woman-led</span>
+            <span className="bg-[#fdd835]/60 text-black px-3 py-1 rounded-full shadow-sm whitespace-nowrap">1.5M Recycled</span>
+            <span className="bg-[#fdd835]/60 text-black px-3 py-1 rounded-full shadow-sm whitespace-nowrap">+ 5K Inspired</span>
           </div>
         </div>
 
@@ -42,7 +42,7 @@ export default function AboutHeroSection() {
             />
             <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black to-transparent p-4">
               <p className="text-white font-bold text-sm">FOUNDER & OWNER</p>
-              <p className="text-yellow-400 font-bold">Sangita Das</p>
+              <p className="text-[#fdd835] font-bold">Sangita Das</p>
             </div>
           </div>
           <div className="relative bg-gray-800 rounded-lg overflow-hidden h-80 flex items-center justify-center">
@@ -53,7 +53,7 @@ export default function AboutHeroSection() {
             />
             <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black to-transparent p-4">
               <p className="text-white font-bold text-sm">CO-FOUNDER</p>
-              <p className="text-yellow-400 font-bold">Devanshi Das</p>
+              <p className="text-[#fdd835] font-bold">Devanshi Das</p>
             </div>
           </div>
         </div>

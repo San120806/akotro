@@ -81,17 +81,27 @@ function ShopContent() {
         const res = await myWixClient.products.queryProducts().find();
         
         // Map Wix products to our app's structure
-        const mappedProducts = res.items.map((p) => ({
-          id: p._id,
-          name: p.name,
-          description: p.description ? p.description.replace(/<[^>]*>?/gm, '') : '',
-          price: p.priceData?.formatted?.price || `₹${p.priceData?.price || 0}`,
-          rawPrice: p.priceData?.price || 0,
-          category: p.collectionIds && p.collectionIds.length > 0 ? 'Plantable' : 'Pencils', // Default categorization logic
-          label: p.name,
-          image: getImageUrl(p.media?.mainMedia?.image?.url),
-          link: `/shop/${p._id}`
-        }));
+        const mappedProducts = res.items.map((p) => {
+          const origPrice = p.priceData?.price || 0;
+          const salePrice = p.priceData?.discountedPrice || origPrice;
+          const hasDiscount = salePrice < origPrice;
+          const discountPct = hasDiscount ? Math.round(((origPrice - salePrice) / origPrice) * 100) : 0;
+          const save = hasDiscount ? origPrice - salePrice : 0;
+          return {
+            id: p._id,
+            name: p.name,
+            description: p.description ? p.description.replace(/<[^>]*>?/gm, '') : '',
+            price: `₹${salePrice}`,
+            rawPrice: salePrice,
+            originalPrice: hasDiscount ? origPrice : null,
+            discount: hasDiscount ? discountPct : null,
+            save: hasDiscount ? save : null,
+            category: p.collectionIds && p.collectionIds.length > 0 ? 'Plantable' : 'Pencils',
+            label: p.name,
+            image: getImageUrl(p.media?.mainMedia?.image?.url),
+            link: `/shop/${p._id}`
+          };
+        });
         
         setWixProducts(mappedProducts);
       } catch (error) {
@@ -177,7 +187,7 @@ function ShopContent() {
   };
 
   return (
-    <div style={{ backgroundColor: '#FDF4BE', minHeight: '100vh', fontFamily: "'Inter', sans-serif" }}>
+    <div style={{ backgroundColor: '#fffde8', minHeight: '100vh', fontFamily: "'Inter', sans-serif" }}>
       <style>{`
         @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap');
         * { box-sizing: border-box; }
@@ -185,11 +195,11 @@ function ShopContent() {
         /* Hero Products */
         .hero-products { max-width:1280px; margin:0 auto; padding:40px 28px 0; }
         .hero-products-header { display:flex; align-items:center; gap:14px; margin-bottom:18px; }
-        .hero-products-badge { display:inline-flex; align-items:center; gap:6px; background:#C0392B; color:#fff; font-size:11px; font-weight:700; letter-spacing:.05em; padding:6px 14px; border-radius:999px; }
+        .hero-products-badge { display:inline-flex; align-items:center; gap:6px; background:#880808; color:#fff; font-size:11px; font-weight:700; letter-spacing:.05em; padding:6px 14px; border-radius:999px; }
         .hero-products-sub { font-size:13px; color:#555; font-style:italic; }
         .hero-grid { display:grid; grid-template-columns:1fr 1fr; gap:18px; }
         @media(max-width:700px){ .hero-grid{grid-template-columns:1fr;} }
-        .hero-card { background:#fff; border-radius:14px; border:2px solid #FDD734; overflow:hidden; display:flex; min-height:220px; }
+        .hero-card { background:#fff; border-radius:14px; border:2px solid #fdd835; overflow:hidden; display:flex; min-height:220px; }
         .hero-card-img { width:220px; min-width:220px; position:relative; overflow:hidden; }
         @media(max-width:700px) {
           .hero-card { flex-direction: column; min-height: auto; }
@@ -197,25 +207,25 @@ function ShopContent() {
         }
         .hero-card-body { padding:18px 20px; display:flex; flex-direction:column; justify-content:space-between; flex:1; }
         .hero-card-badges { display:flex; align-items:center; gap:8px; margin-bottom:8px; }
-        .hbadge-num { background:#FDD734; color:#111; font-size:10px; font-weight:800; padding:3px 10px; border-radius:999px; }
-        .hbadge-off { background:#C0392B; color:#fff; font-size:10px; font-weight:800; padding:3px 10px; border-radius:999px; }
-        .hero-card-cat { font-size:9.5px; font-weight:700; letter-spacing:.08em; color:#C0392B; margin-bottom:5px; text-transform:uppercase; }
+        .hbadge-num { background:#fdd835; color:#111; font-size:10px; font-weight:800; padding:3px 10px; border-radius:999px; }
+        .hbadge-off { background:#880808; color:#fff; font-size:10px; font-weight:800; padding:3px 10px; border-radius:999px; }
+        .hero-card-cat { font-size:9.5px; font-weight:700; letter-spacing:.08em; color:#880808; margin-bottom:5px; text-transform:uppercase; }
         .hero-card-name { font-size:20px; font-weight:900; color:#111; margin-bottom:8px; line-height:1.1; }
         .hero-card-desc { font-size:12.5px; color:#444; line-height:1.6; margin-bottom:12px; flex:1; }
         .hero-card-foot { display:flex; align-items:center; gap:14px; flex-wrap:wrap; }
         .hero-price-wrap { display:flex; flex-direction:column; gap:2px; }
         .hero-price { font-size:20px; font-weight:900; color:#111; }
         .hero-price-orig { font-size:12px; color:#aaa; text-decoration:line-through; }
-        .hero-save { background:#FDD734; color:#111; font-size:10px; font-weight:800; padding:2px 8px; border-radius:4px; margin-top:2px; width:fit-content; }
-        .hero-atc { background:#C0392B; color:#fff; border:none; border-radius:8px; font-size:12px; font-weight:700; padding:10px 20px; cursor:pointer; display:flex; align-items:center; gap:7px; transition:background .2s; }
-        .hero-atc:hover { background:#a93226; }
+        .hero-save { background:#fdd835; color:#111; font-size:10px; font-weight:800; padding:2px 8px; border-radius:4px; margin-top:2px; width:fit-content; }
+        .hero-atc { background:#880808; color:#fff; border:none; border-radius:8px; font-size:12px; font-weight:700; padding:10px 20px; cursor:pointer; display:flex; align-items:center; gap:7px; transition:background .2s; }
+        .hero-atc:hover { background:#6b0606; }
 
         /* Product grid */
         .grid-wrap { max-width:1280px; margin:0 auto; padding:40px 28px 60px; }
         .filter-tabs { display:flex; justify-content:center; gap:12px; margin-bottom:24px; flex-wrap:wrap; }
         .filter-btn { background:#fff; border:1px solid rgba(0,0,0,0.1); border-radius:999px; padding:8px 20px; font-size:13px; font-weight:600; color:#444; cursor:pointer; transition:all 0.2s; }
-        .filter-btn:hover { border-color:#FDD734; color:#111; }
-        .filter-btn.active { background:#FDD734; border-color:#FDD734; color:#111; }
+        .filter-btn:hover { border-color:#fdd835; color:#111; }
+        .filter-btn.active { background:#fdd835; border-color:#fdd835; color:#111; }
         .grid-count { font-size:13px; font-weight:700; color:#555; text-align:center; margin-bottom:28px; letter-spacing:0.05em; text-transform:uppercase; }
         .prod-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:18px; }
         @media(max-width:900px){ .prod-grid{grid-template-columns:repeat(2,1fr);} }
@@ -228,7 +238,7 @@ function ShopContent() {
         .pcard:hover .pcard-img img { transform:scale(1.05); }
         
         .pcard-badge-left { position:absolute; top:9px; left:9px; font-size:9.5px; font-weight:800; letter-spacing:.05em; padding:3px 9px; border-radius:4px; color:#fff; background:#111; z-index: 10; }
-        .pcard-badge-right { position:absolute; top:9px; right:48px; font-size:9.5px; font-weight:800; padding:3px 9px; border-radius:4px; color:#fff; background:#C0392B; z-index: 10; }
+        .pcard-badge-right { position:absolute; top:9px; right:48px; font-size:9.5px; font-weight:800; padding:3px 9px; border-radius:4px; color:#fff; background:#880808; z-index: 10; }
 
         .pcard-wishlist {
           position: absolute;
@@ -258,34 +268,34 @@ function ShopContent() {
         }
         
         .pcard-body { padding:14px 16px 18px; flex:1; display:flex; flex-direction:column; }
-        .pcard-cat { font-size:10px; font-weight:700; letter-spacing:.08em; color:#C0392B; margin-bottom:5px; text-transform:uppercase; }
+        .pcard-cat { font-size:10px; font-weight:700; letter-spacing:.08em; color:#880808; margin-bottom:5px; text-transform:uppercase; }
         .pcard-name { font-size:14px; font-weight:700; color:#111; margin-bottom:auto; line-height:1.3; min-height: 36px; }
         .pcard-foot { display:flex; justify-content:space-between; align-items:flex-end; margin-top:14px; }
         .pcard-price { font-size:18px; font-weight:900; color:#111; }
         .pcard-orig { font-size:12px; color:#999; text-decoration:line-through; margin-left:5px; font-weight:500; }
-        .cart-btn { width:32px; height:32px; background:#FDD734; border:none; border-radius:8px; cursor:pointer; display:flex; align-items:center; justify-content:center; transition:background .2s; }
+        .cart-btn { width:32px; height:32px; background:#fdd835; border:none; border-radius:8px; cursor:pointer; display:flex; align-items:center; justify-content:center; transition:background .2s; }
         .cart-btn:hover { background:#f5c800; }
         .cart-btn svg { width:16px; height:16px; color:#111; }
 
         /* Bulk */
-        .bulk-card { background:#FDF4BE; border:2px solid #FDD734; border-radius:12px; padding:32px 28px; display:flex; flex-direction:column; justify-content:center; }
+        .bulk-card { background:#fffde8; border:2px solid #fdd835; border-radius:12px; padding:32px 28px; display:flex; flex-direction:column; justify-content:center; }
         .bulk-title { font-size:24px; font-weight:900; color:#111; margin:0 0 6px; }
         .bulk-subtitle { font-size:15px; font-weight:800; color:#111; margin:0 0 12px; }
         .bulk-desc { font-size:13px; color:#555; margin:0 0 24px; line-height:1.5; }
-        .bulk-btn { display:inline-flex; align-items:center; gap:8px; background:#C0392B; color:#fff; font-size:12px; font-weight:700; padding:12px 24px; border-radius:8px; border:none; cursor:pointer; width:fit-content; }
-        .bulk-btn:hover { background:#a93226; }
+        .bulk-btn { display:inline-flex; align-items:center; gap:8px; background:#880808; color:#fff; font-size:12px; font-weight:700; padding:12px 24px; border-radius:8px; border:none; cursor:pointer; width:fit-content; }
+        .bulk-btn:hover { background:#6b0606; }
 
         /* Newsletter */
         .nl-wrap { max-width:1280px; margin:0 auto; padding:0 28px 40px; }
-        .nl-card { background:#FDF4BE; border:1px solid #E5DFB3; border-radius:12px; padding:24px 32px; display:flex; align-items:center; gap:24px; flex-wrap:wrap; justify-content:space-between; }
+        .nl-card { background:#fffde8; border:1px solid #E5DFB3; border-radius:12px; padding:24px 32px; display:flex; align-items:center; gap:24px; flex-wrap:wrap; justify-content:space-between; }
         .nl-title { font-size:14px; font-weight:800; color:#111; display:flex; align-items:center; gap:8px; margin-bottom:4px; }
         .nl-sub { font-size:12.5px; color:#666; }
         .nl-form { display:flex; gap:10px; flex:1; min-width:300px; max-width:500px; }
         .nl-input { flex:1; border:1px solid #ddd; border-radius:8px; padding:12px 16px; font-size:13px; outline:none; background:#fff; color:#111; }
         .nl-input::placeholder { color:#555; }
-        .nl-input:focus { border-color:#FDD734; }
-        .nl-submit { background:#C0392B; color:#fff; border:none; border-radius:8px; font-size:13px; font-weight:700; padding:12px 28px; cursor:pointer; white-space:nowrap; transition:background .2s; }
-        .nl-submit:hover { background:#a93226; }
+        .nl-input:focus { border-color:#fdd835; }
+        .nl-submit { background:#880808; color:#fff; border:none; border-radius:8px; font-size:13px; font-weight:700; padding:12px 28px; cursor:pointer; white-space:nowrap; transition:background .2s; }
+        .nl-submit:hover { background:#6b0606; }
         .nl-submit:disabled { opacity:.6; cursor:not-allowed; }
 
 
@@ -321,8 +331,8 @@ function ShopContent() {
                   title={isFavorite(h.id) ? "Remove from Wishlist" : "Add to Wishlist"}
                 >
                   <svg 
-                    fill={isFavorite(h.id) ? "#C0392B" : "none"} 
-                    stroke="#C0392B" 
+                    fill={isFavorite(h.id) ? "#880808" : "none"} 
+                    stroke="#880808" 
                     viewBox="0 0 24 24"
                     className="w-4 h-4"
                   >
@@ -381,22 +391,21 @@ function ShopContent() {
           ))}
         </div>
         <div className="prod-grid">
-          {/* Item 0, 1, 2 */}
           {filtered.slice(0, 3).map(p => (
             <Link key={p.id} href={`/product/${p.id}`} style={{ textDecoration: 'none' }}>
               <div className="pcard">
                 <div className="pcard-img">
                   <Image src={p.image} alt={p.name} fill style={{ objectFit: 'cover' }} sizes="(max-width:600px) 100vw, 33vw" />
                   {p.label && <span className="pcard-badge-left" style={{ background: p.badgeColor || '#111' }}>{p.label.split('·')[0].trim()}</span>}
-                  {p.badge && <span className="pcard-badge-right">{p.badge}</span>}
+                  {p.discount && <span className="pcard-badge-right">{p.discount}% OFF</span>}
                   <button 
                     className="pcard-wishlist" 
                     onClick={(e) => toggleWishlist(p, e)}
                     title={isFavorite(p.id) ? "Remove from Wishlist" : "Add to Wishlist"}
                   >
                     <svg 
-                      fill={isFavorite(p.id) ? "#C0392B" : "none"} 
-                      stroke="#C0392B" 
+                      fill={isFavorite(p.id) ? "#880808" : "none"} 
+                      stroke="#880808" 
                       viewBox="0 0 24 24"
                       className="w-4 h-4"
                     >
@@ -443,22 +452,21 @@ function ShopContent() {
             </a>
           </div>
 
-          {/* Rest of the items */}
           {filtered.slice(3).map(p => (
             <Link key={p.id} href={`/product/${p.id}`} style={{ textDecoration: 'none' }}>
               <div className="pcard">
                 <div className="pcard-img">
                   <Image src={p.image} alt={p.name} fill style={{ objectFit: 'cover' }} sizes="(max-width:600px) 100vw, 33vw" />
                   {p.label && <span className="pcard-badge-left" style={{ background: p.badgeColor || '#111' }}>{p.label.split('·')[0].trim()}</span>}
-                  {p.badge && <span className="pcard-badge-right">{p.badge}</span>}
+                  {p.discount && <span className="pcard-badge-right">{p.discount}% OFF</span>}
                   <button 
                     className="pcard-wishlist" 
                     onClick={(e) => toggleWishlist(p, e)}
                     title={isFavorite(p.id) ? "Remove from Wishlist" : "Add to Wishlist"}
                   >
                     <svg 
-                      fill={isFavorite(p.id) ? "#C0392B" : "none"} 
-                      stroke="#C0392B" 
+                      fill={isFavorite(p.id) ? "#880808" : "none"} 
+                      stroke="#880808" 
                       viewBox="0 0 24 24"
                       className="w-4 h-4"
                     >
@@ -564,7 +572,7 @@ function ShopContent() {
                 </button>
                 <button 
                   onClick={() => router.push('/cart')}
-                  className="flex-1 px-6 py-3 bg-[#A40000] text-white font-bold rounded-lg hover:bg-red-800 transition-colors shadow-md"
+                  className="flex-1 px-6 py-3 bg-[#880808] text-white font-bold rounded-lg hover:bg-[#5a0505] transition-colors shadow-md"
                 >
                   VIEW CART
                 </button>
@@ -592,7 +600,7 @@ function ShopContent() {
             <p className="text-gray-500 text-sm mb-6">You&apos;ll be the first to know about new launches, exclusive discounts, and eco-living tips from Akotro.</p>
             <button
               onClick={() => setNlSuccess(false)}
-              className="w-full bg-red-700 text-white py-3 rounded-lg font-bold hover:bg-red-800 transition-colors"
+              className="w-full bg-[#6b0606] text-white py-3 rounded-lg font-bold hover:bg-[#5a0505] transition-colors"
             >
               AWESOME, THANKS!
             </button>
@@ -605,7 +613,7 @@ function ShopContent() {
 
 export default function ShopPage() {
   return (
-    <Suspense fallback={<div className="min-h-screen bg-[#FDF4BE] flex items-center justify-center">Loading...</div>}>
+    <Suspense fallback={<div className="min-h-screen bg-[#fffde8] flex items-center justify-center">Loading...</div>}>
       <ShopContent />
     </Suspense>
   );

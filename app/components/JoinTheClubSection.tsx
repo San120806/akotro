@@ -33,14 +33,14 @@ export default function JoinTheClubSection() {
       <div className="max-w-7xl mx-auto px-4 grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
         {/* Left Side */}
         <div>
-          <p className="font-bold text-sm uppercase text-[#F9C923] mb-3 flex items-center gap-2 tracking-wide">
-            <span className="w-6 h-0.5 bg-[#F9C923]"></span>
+          <p className="font-bold text-sm uppercase text-[#fdd835] mb-3 flex items-center gap-2 tracking-wide">
+            <span className="w-6 h-0.5 bg-[#fdd835]"></span>
             JOIN THE CLUB
           </p>
           <h2 className="text-4xl md:text-5xl font-black text-white leading-tight mb-4 tracking-tight">
             The Sustainable
             <br />
-            <span className="text-[#F9C923]">Lifestyle Club</span>
+            <span className="text-[#fdd835]">Lifestyle Club</span>
           </h2>
           <p className="text-white text-sm md:text-base leading-relaxed max-w-lg">
             Get updates on new launches, exclusive discounts, and eco-living tips. Free delivery on your first order after subscribing.
@@ -63,7 +63,7 @@ export default function JoinTheClubSection() {
               id="about-newsletter-submit"
               type="submit"
               disabled={loading}
-              className="bg-[#F9C923] text-black px-8 py-3 rounded-r text-xs tracking-wider font-bold hover:bg-yellow-400 transition-colors whitespace-nowrap disabled:opacity-60"
+              className="bg-[#fdd835] text-black px-8 py-3 rounded-r text-xs tracking-wider font-bold hover:bg-[#fdd835] transition-colors whitespace-nowrap disabled:opacity-60"
             >
               {loading ? 'JOINING...' : 'JOIN NOW'}
             </button>
@@ -72,7 +72,7 @@ export default function JoinTheClubSection() {
             No spam, ever. Unsubscribe anytime.
           </p>
           <p className="text-white text-xs font-medium">
-            Follow us on Instagram: <a href="https://instagram.com/akotro_official" className="text-[#F9C923] hover:underline font-bold">@akotro_official ↗</a>
+            Follow us on Instagram: <a href="https://instagram.com/akotro_official" className="text-[#fdd835] hover:underline font-bold">@akotro_official ↗</a>
           </p>
         </div>
       </div>
@@ -95,7 +95,7 @@ export default function JoinTheClubSection() {
             <p className="text-gray-500 text-sm mb-6">You&apos;ll be the first to know about new launches, exclusive discounts, and eco-living tips from Akotro.</p>
             <button
               onClick={() => setShowPopup(false)}
-              className="w-full bg-[#A60702] text-white py-3 rounded-lg font-bold hover:bg-red-800 transition-colors"
+              className="w-full bg-[#A60702] text-white py-3 rounded-lg font-bold hover:bg-[#5a0505] transition-colors"
             >
               AWESOME, THANKS!
             </button>

@@ -2,7 +2,7 @@ import Image from 'next/image';
 
 export default function JoinUsSection() {
   return (
-    <section className="bg-[#FDF4BE] py-16">
+    <section className="bg-[#fffde8] py-16">
       <div className="max-w-7xl mx-auto px-4 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
         {/* Left Side */}
         <div>
@@ -23,14 +23,14 @@ export default function JoinUsSection() {
               href="https://instagram.com/akotro_official" 
               target="_blank" 
               rel="noopener noreferrer"
-              className="bg-[#A60702] text-white px-6 py-3 rounded text-xs tracking-wider font-bold flex items-center gap-2 hover:bg-red-800 transition-colors"
+              className="bg-[#A60702] text-white px-6 py-3 rounded text-xs tracking-wider font-bold flex items-center gap-2 hover:bg-[#5a0505] transition-colors"
             >
               @AKOTRO_OFFICIAL
               <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" /></svg>
             </a>
             <a 
               href="/shop"
-              className="bg-black text-[#F9C923] px-6 py-3 rounded text-xs tracking-wider font-bold hover:bg-gray-800 transition-colors"
+              className="bg-black text-[#fdd835] px-6 py-3 rounded text-xs tracking-wider font-bold hover:bg-gray-800 transition-colors"
             >
               SHOP PRODUCTS
             </a>
@@ -38,7 +38,7 @@ export default function JoinUsSection() {
         </div>
 
         {/* Right Side - Image Grid */}
-        <div className="grid grid-cols-2 gap-2 bg-[#F9C923] border-4 border-[#F9C923] rounded-lg overflow-hidden h-[400px] md:h-[500px]">
+        <div className="grid grid-cols-2 gap-2 bg-[#fdd835] border-4 border-[#fdd835] rounded-lg overflow-hidden h-[400px] md:h-[500px]">
           {/* Left tall image */}
           <div className="relative h-full w-full bg-white">
             <Image

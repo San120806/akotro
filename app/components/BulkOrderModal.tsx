@@ -49,7 +49,7 @@ export default function BulkOrderModal({ onClose }: Props) {
         onClick={e => e.stopPropagation()}
       >
         {/* Header */}
-        <div className="bg-[#A40000] text-white px-6 py-5 rounded-t-2xl">
+        <div className="bg-[#880808] text-white px-6 py-5 rounded-t-2xl">
           <div className="flex justify-between items-start">
             <div>
               <h2 className="text-xl font-black">Bulk & Corporate Orders</h2>
@@ -73,7 +73,7 @@ export default function BulkOrderModal({ onClose }: Props) {
               </p>
               <button
                 onClick={onClose}
-                className="mt-6 bg-[#A40000] text-white px-6 py-2.5 rounded-lg font-bold text-sm hover:bg-red-800 transition-colors"
+                className="mt-6 bg-[#880808] text-white px-6 py-2.5 rounded-lg font-bold text-sm hover:bg-[#5a0505] transition-colors"
               >
                 Close
               </button>
@@ -84,33 +84,33 @@ export default function BulkOrderModal({ onClose }: Props) {
                 <div>
                   <label className="block text-xs font-bold text-gray-700 mb-1">Full Name *</label>
                   <input required value={form.name} onChange={e => set('name', e.target.value)}
-                    className="w-full px-3 py-2.5 border border-gray-300 rounded-lg text-sm text-black focus:border-[#A40000] focus:ring-1 focus:ring-[#A40000] bg-white" />
+                    className="w-full px-3 py-2.5 border border-gray-300 rounded-lg text-sm text-black focus:border-[#880808] focus:ring-1 focus:ring-[#880808] bg-white" />
                 </div>
                 <div>
                   <label className="block text-xs font-bold text-gray-700 mb-1">Phone *</label>
                   <input required type="tel" value={form.phone} onChange={e => set('phone', e.target.value)}
-                    className="w-full px-3 py-2.5 border border-gray-300 rounded-lg text-sm text-black focus:border-[#A40000] focus:ring-1 focus:ring-[#A40000] bg-white" />
+                    className="w-full px-3 py-2.5 border border-gray-300 rounded-lg text-sm text-black focus:border-[#880808] focus:ring-1 focus:ring-[#880808] bg-white" />
                 </div>
               </div>
 
               <div>
                 <label className="block text-xs font-bold text-gray-700 mb-1">Email Address *</label>
                 <input required type="email" value={form.email} onChange={e => set('email', e.target.value)}
-                  className="w-full px-3 py-2.5 border border-gray-300 rounded-lg text-sm text-black focus:border-[#A40000] focus:ring-1 focus:ring-[#A40000] bg-white" />
+                  className="w-full px-3 py-2.5 border border-gray-300 rounded-lg text-sm text-black focus:border-[#880808] focus:ring-1 focus:ring-[#880808] bg-white" />
               </div>
 
               <div>
                 <label className="block text-xs font-bold text-gray-700 mb-1">Organisation / Company</label>
                 <input value={form.organization} onChange={e => set('organization', e.target.value)}
                   placeholder="e.g. Acme Corp, School Name..."
-                  className="w-full px-3 py-2.5 border border-gray-300 rounded-lg text-sm text-black focus:border-[#A40000] focus:ring-1 focus:ring-[#A40000] bg-white" />
+                  className="w-full px-3 py-2.5 border border-gray-300 rounded-lg text-sm text-black focus:border-[#880808] focus:ring-1 focus:ring-[#880808] bg-white" />
               </div>
 
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <div>
                   <label className="block text-xs font-bold text-gray-700 mb-1">Product Type *</label>
                   <select required value={form.productType} onChange={e => set('productType', e.target.value)}
-                    className="w-full px-3 py-2.5 border border-gray-300 rounded-lg text-sm text-black focus:border-[#A40000] focus:ring-1 focus:ring-[#A40000] bg-white">
+                    className="w-full px-3 py-2.5 border border-gray-300 rounded-lg text-sm text-black focus:border-[#880808] focus:ring-1 focus:ring-[#880808] bg-white">
                     <option value="">Select...</option>
                     {PRODUCT_TYPES.map(t => <option key={t} value={t}>{t}</option>)}
                   </select>
@@ -119,7 +119,7 @@ export default function BulkOrderModal({ onClose }: Props) {
                   <label className="block text-xs font-bold text-gray-700 mb-1">Quantity Required *</label>
                   <input required type="number" min="50" value={form.quantity} onChange={e => set('quantity', e.target.value)}
                     placeholder="Min. 50 units"
-                    className="w-full px-3 py-2.5 border border-gray-300 rounded-lg text-sm text-black focus:border-[#A40000] focus:ring-1 focus:ring-[#A40000] bg-white" />
+                    className="w-full px-3 py-2.5 border border-gray-300 rounded-lg text-sm text-black focus:border-[#880808] focus:ring-1 focus:ring-[#880808] bg-white" />
                 </div>
               </div>
 
@@ -127,15 +127,15 @@ export default function BulkOrderModal({ onClose }: Props) {
                 <label className="block text-xs font-bold text-gray-700 mb-1">Additional Requirements</label>
                 <textarea value={form.message} onChange={e => set('message', e.target.value)} rows={3}
                   placeholder="Custom branding, delivery timeline, specific colours, etc."
-                  className="w-full px-3 py-2.5 border border-gray-300 rounded-lg text-sm text-black focus:border-[#A40000] focus:ring-1 focus:ring-[#A40000] bg-white resize-none" />
+                  className="w-full px-3 py-2.5 border border-gray-300 rounded-lg text-sm text-black focus:border-[#880808] focus:ring-1 focus:ring-[#880808] bg-white resize-none" />
               </div>
 
               {status === 'error' && (
-                <p className="text-red-600 text-sm font-medium">Something went wrong. Please try again.</p>
+                <p className="text-[#880808] text-sm font-medium">Something went wrong. Please try again.</p>
               )}
 
               <button type="submit" disabled={status === 'loading'}
-                className="w-full bg-[#A40000] text-white py-3 rounded-lg font-bold text-sm hover:bg-red-800 transition-colors shadow-md disabled:opacity-60">
+                className="w-full bg-[#880808] text-white py-3 rounded-lg font-bold text-sm hover:bg-[#5a0505] transition-colors shadow-md disabled:opacity-60">
                 {status === 'loading' ? 'Submitting...' : 'SUBMIT BULK ORDER REQUEST →'}
               </button>
 

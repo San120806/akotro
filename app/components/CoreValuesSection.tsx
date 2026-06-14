@@ -37,7 +37,7 @@ export default function CoreValuesSection() {
   ];
 
   return (
-    <section className="bg-[#FDF4BE] flex flex-col">
+    <section className="bg-[#fffde8] flex flex-col">
       <div className="w-full max-w-7xl mx-auto px-4 pt-16 pb-12 flex-1">
         <div className="mb-8">
           <p className="font-bold text-sm uppercase text-[#A60702] mb-2 flex items-center gap-2 tracking-wide">
@@ -49,7 +49,7 @@ export default function CoreValuesSection() {
           </h2>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-[1px] bg-[#F9C923] border border-[#F9C923] rounded-md overflow-hidden">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-[1px] bg-[#fdd835] border border-[#fdd835] rounded-md overflow-hidden">
           {values.map((value, index) => {
             const Icon = value.icon;
             return (
@@ -71,27 +71,27 @@ export default function CoreValuesSection() {
       </div>
 
       {/* Bottom Stats Bar */}
-      <div className="bg-[#1A1A1A] border-t-4 border-[#F9C923]">
+      <div className="bg-[#1A1A1A] border-t-4 border-[#fdd835]">
         <div className="max-w-7xl mx-auto">
           <div className="grid grid-cols-2 md:grid-cols-5 divide-y md:divide-y-0 md:divide-x divide-white/10">
             <div className="py-8 text-center flex flex-col items-center justify-center">
-              <div className="text-[#F9C923] text-4xl md:text-5xl font-black mb-2">18</div>
+              <div className="text-[#fdd835] text-4xl md:text-5xl font-black mb-2">18</div>
               <div className="text-white text-xs font-bold tracking-[0.2em] uppercase">ECO PRODUCTS</div>
             </div>
             <div className="py-8 text-center flex flex-col items-center justify-center">
-              <div className="text-[#F9C923] text-4xl md:text-5xl font-black mb-2">100%</div>
+              <div className="text-[#fdd835] text-4xl md:text-5xl font-black mb-2">100%</div>
               <div className="text-white text-xs font-bold tracking-[0.2em] uppercase">RECYCLED PAPER</div>
             </div>
             <div className="py-8 text-center flex flex-col items-center justify-center">
-              <div className="text-[#F9C923] text-4xl md:text-5xl font-black mb-2">0</div>
+              <div className="text-[#fdd835] text-4xl md:text-5xl font-black mb-2">0</div>
               <div className="text-white text-xs font-bold tracking-[0.2em] uppercase">PLASTIC USED</div>
             </div>
             <div className="py-8 text-center flex flex-col items-center justify-center">
-              <div className="text-[#F9C923] text-4xl md:text-5xl font-black mb-2">2023</div>
+              <div className="text-[#fdd835] text-4xl md:text-5xl font-black mb-2">2023</div>
               <div className="text-white text-xs font-bold tracking-[0.2em] uppercase">FOUNDED MUMBAI</div>
             </div>
             <div className="py-8 text-center flex flex-col items-center justify-center col-span-2 md:col-span-1">
-              <div className="text-[#F9C923] text-4xl md:text-5xl font-black mb-2 flex items-center justify-center gap-1">
+              <div className="text-[#fdd835] text-4xl md:text-5xl font-black mb-2 flex items-center justify-center gap-1">
                 5<svg className="w-8 h-8 fill-current" viewBox="0 0 24 24"><path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z" /></svg>
               </div>
               <div className="text-white text-xs font-bold tracking-[0.2em] uppercase">AVG. RATING</div>

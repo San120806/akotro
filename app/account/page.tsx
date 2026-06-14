@@ -80,9 +80,9 @@ export default function AccountPage() {
 
   if (loading) {
     return (
-      <div className="min-h-screen bg-[#FDF4BE] flex items-center justify-center">
+      <div className="min-h-screen bg-[#fffde8] flex items-center justify-center">
         <div className="text-center">
-          <div className="w-12 h-12 border-4 border-[#A40000] border-t-transparent rounded-full animate-spin mx-auto mb-4" />
+          <div className="w-12 h-12 border-4 border-[#880808] border-t-transparent rounded-full animate-spin mx-auto mb-4" />
           <p className="text-gray-600 font-medium">Loading your account...</p>
         </div>
       </div>
@@ -101,15 +101,15 @@ export default function AccountPage() {
   ];
 
   return (
-    <div className="min-h-screen bg-[#FDF4BE]">
+    <div className="min-h-screen bg-[#fffde8]">
       {/* Header */}
-      <div className="bg-[#A40000] text-white py-8 px-4">
+      <div className="bg-[#880808] text-white py-8 px-4">
         <div className="max-w-4xl mx-auto flex items-center justify-between">
           <Link href="/" className="text-white/80 hover:text-white text-sm font-medium">← Back to Home</Link>
           <button onClick={handleLogout} className="text-white/80 hover:text-white text-sm font-medium">Sign out</button>
         </div>
         <div className="max-w-4xl mx-auto mt-6 flex items-center gap-4">
-          <div className="w-16 h-16 bg-[#F9C923] rounded-full flex items-center justify-center text-[#A40000] text-2xl font-black">
+          <div className="w-16 h-16 bg-[#fdd835] rounded-full flex items-center justify-center text-[#880808] text-2xl font-black">
             {initials}
           </div>
           <div>
@@ -127,7 +127,7 @@ export default function AccountPage() {
               key={tab.id}
               onClick={() => setActiveTab(tab.id)}
               className={`flex-1 py-2.5 rounded-lg text-sm font-bold transition-colors ${
-                activeTab === tab.id ? 'bg-[#A40000] text-white' : 'text-gray-500 hover:text-gray-800'
+                activeTab === tab.id ? 'bg-[#880808] text-white' : 'text-gray-500 hover:text-gray-800'
               }`}
             >
               {tab.label}
@@ -143,7 +143,7 @@ export default function AccountPage() {
               <div className="text-center py-12">
                 <div className="text-5xl mb-4"></div>
                 <p className="text-gray-500 font-medium">No orders yet</p>
-                <Link href="/shop" className="mt-4 inline-block bg-[#A40000] text-white px-6 py-2.5 rounded-lg font-bold text-sm hover:bg-red-800 transition-colors">
+                <Link href="/shop" className="mt-4 inline-block bg-[#880808] text-white px-6 py-2.5 rounded-lg font-bold text-sm hover:bg-[#5a0505] transition-colors">
                   Shop Now
                 </Link>
               </div>
@@ -158,7 +158,7 @@ export default function AccountPage() {
                         <p className="text-xs text-gray-400 mt-1">{new Date(order.date).toLocaleDateString('en-IN', { day: 'numeric', month: 'short', year: 'numeric' })}</p>
                       </div>
                       <div className="text-right">
-                        <p className="font-black text-[#A40000]">₹{order.amount}</p>
+                        <p className="font-black text-[#880808]">₹{order.amount}</p>
                         <span className="text-xs font-bold bg-green-100 text-green-700 px-2 py-0.5 rounded-full">Paid</span>
                       </div>
                     </div>
@@ -177,7 +177,7 @@ export default function AccountPage() {
               <div className="text-center py-12">
                 <div className="text-5xl mb-4"></div>
                 <p className="text-gray-500 font-medium">Your cart is empty</p>
-                <Link href="/shop" className="mt-4 inline-block bg-[#A40000] text-white px-6 py-2.5 rounded-lg font-bold text-sm hover:bg-red-800 transition-colors">
+                <Link href="/shop" className="mt-4 inline-block bg-[#880808] text-white px-6 py-2.5 rounded-lg font-bold text-sm hover:bg-[#5a0505] transition-colors">
                   Browse Products
                 </Link>
               </div>
@@ -193,15 +193,15 @@ export default function AccountPage() {
                         <p className="font-bold text-gray-900">{item.name}</p>
                         <p className="text-sm text-gray-500">₹{item.price} × {item.quantity}</p>
                       </div>
-                      <p className="font-bold text-[#A40000]">₹{item.price * item.quantity}</p>
+                      <p className="font-bold text-[#880808]">₹{item.price * item.quantity}</p>
                     </div>
                   ))}
                 </div>
                 <div className="flex justify-between items-center border-t border-gray-100 pt-4 mb-4">
                   <span className="font-bold text-gray-900">Total ({cartItems.reduce((a, i) => a + i.quantity, 0)} items)</span>
-                  <span className="text-xl font-black text-[#A40000]">₹{subtotal}</span>
+                  <span className="text-xl font-black text-[#880808]">₹{subtotal}</span>
                 </div>
-                <Link href="/cart" className="block text-center bg-[#A40000] text-white py-3 rounded-lg font-bold text-sm hover:bg-red-800 transition-colors">
+                <Link href="/cart" className="block text-center bg-[#880808] text-white py-3 rounded-lg font-bold text-sm hover:bg-[#5a0505] transition-colors">
                   Go to Cart & Checkout →
                 </Link>
               </div>
@@ -218,7 +218,7 @@ export default function AccountPage() {
               {wishlistItems.length === 0 ? (
                 <div className="text-center py-12">
                   <p className="text-gray-500 font-medium mb-4">You haven&apos;t added any products yet.</p>
-                  <Link href="/shop" className="text-[#A40000] font-bold text-sm hover:underline">
+                  <Link href="/shop" className="text-[#880808] font-bold text-sm hover:underline">
                     Start adding products
                   </Link>
                 </div>
@@ -241,7 +241,7 @@ export default function AccountPage() {
                             addWishlistItemToCart(item);
                             removeWishlistItem(item.id);
                           }}
-                          className="bg-[#A40000] text-white px-4 py-2 rounded-lg font-bold text-xs hover:bg-red-800 transition-colors"
+                          className="bg-[#880808] text-white px-4 py-2 rounded-lg font-bold text-xs hover:bg-[#5a0505] transition-colors"
                         >
                           ADD TO CART
                         </button>

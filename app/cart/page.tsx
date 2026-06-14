@@ -108,7 +108,7 @@ export default function CartPage() {
           email: meData.email,
           name: meData.name || meData.email,
         },
-        theme: { color: '#A40000' },
+        theme: { color: '#880808' },
         handler: async (response: any) => {
           // Verify payment on backend
           const verifyRes = await fetch('/api/payment/verify', {
@@ -168,7 +168,7 @@ export default function CartPage() {
             <h1 className="text-3xl font-black text-gray-900 mb-3">Order Placed! </h1>
             <p className="text-gray-500 mb-8">Thank you for shopping with Akotro. Your order is confirmed and will be delivered within 7 days.</p>
             <div className="flex flex-col sm:flex-row gap-3 justify-center">
-              <Link href="/account" className="bg-[#A40000] text-white px-6 py-3 rounded-lg font-bold text-sm hover:bg-red-800 transition-colors">
+              <Link href="/account" className="bg-[#880808] text-white px-6 py-3 rounded-lg font-bold text-sm hover:bg-[#5a0505] transition-colors">
                 View My Orders
               </Link>
               <Link href="/shop" className="bg-white text-gray-900 border border-gray-200 px-6 py-3 rounded-lg font-bold text-sm hover:bg-gray-50 transition-colors">
@@ -193,7 +193,7 @@ export default function CartPage() {
           <div className="bg-white p-12 rounded-lg text-center shadow-sm">
             <h2 className="text-xl font-bold text-gray-700 mb-4">Your cart is currently empty.</h2>
             <Link href="/shop">
-              <button className="bg-[#A40000] text-white px-8 py-3 font-bold rounded hover:bg-red-800 transition-colors">
+              <button className="bg-[#880808] text-white px-8 py-3 font-bold rounded hover:bg-[#5a0505] transition-colors">
                 CONTINUE SHOPPING
               </button>
             </Link>
@@ -269,7 +269,7 @@ export default function CartPage() {
                 <div className="border-t border-gray-100 pt-4 mb-6">
                   <div className="flex justify-between items-center mb-2">
                     <span className="font-bold text-gray-900">Total</span>
-                    <span className="text-2xl font-black text-[#A40000]">₹{subtotal}</span>
+                    <span className="text-2xl font-black text-[#880808]">₹{subtotal}</span>
                   </div>
                   <div className="space-y-1">
                     <p className="text-xs text-gray-500">✓ Tax included in price.</p>
@@ -287,7 +287,7 @@ export default function CartPage() {
                 <button
                   onClick={handleCheckout}
                   disabled={isProcessing}
-                  className="w-full bg-[#A40000] text-white py-4 font-bold rounded-md hover:bg-red-800 transition-colors shadow-lg disabled:opacity-60 disabled:cursor-not-allowed"
+                  className="w-full bg-[#880808] text-white py-4 font-bold rounded-md hover:bg-[#5a0505] transition-colors shadow-lg disabled:opacity-60 disabled:cursor-not-allowed"
                 >
                   {isProcessing ? (
                     <span className="flex items-center justify-center gap-2">

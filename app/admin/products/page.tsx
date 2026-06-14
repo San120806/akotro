@@ -164,7 +164,7 @@ export default function AdminProductsPage() {
         </div>
         <button
           onClick={handleLogout}
-          className="bg-red-600 px-4 py-2 rounded font-bold hover:bg-red-700"
+          className="bg-[#880808] px-4 py-2 rounded font-bold hover:bg-[#6b0606]"
         >
           LOGOUT
         </button>
@@ -323,7 +323,7 @@ export default function AdminProductsPage() {
                         </button>
                         <button
                           onClick={() => handleDelete(product._id)}
-                          className="text-red-600 hover:text-red-800 font-bold text-sm"
+                          className="text-[#880808] hover:text-red-800 font-bold text-sm"
                         >
                           DELETE
                         </button>

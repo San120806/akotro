@@ -23,12 +23,12 @@ export default function StatsSection() {
   ];
 
   return (
-    <section className="bg-yellow-400 py-6">
+    <section className="bg-[#fdd835] py-6">
       <div className="max-w-7xl mx-auto px-4">
         <div className="grid grid-cols-2 md:grid-cols-5 gap-4">
           {stats.map((stat, index) => (
             <div key={index} className="text-center">
-              <h3 className="text-3xl font-bold mb-1 text-red-600">{stat.number}</h3>
+              <h3 className="text-3xl font-bold mb-1 text-[#880808]">{stat.number}</h3>
               <p className="text-xs font-bold text-black">{stat.label}</p>
             </div>
           ))}

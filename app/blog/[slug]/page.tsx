@@ -270,7 +270,7 @@ export default function BlogPostPage({ params }: { params: Promise<{ slug: strin
         <Header />
         <div className="max-w-2xl mx-auto px-4 py-20 text-center">
           <h1 className="text-2xl font-bold text-gray-800">Post not found</h1>
-          <Link href="/blog" className="text-red-600 hover:underline mt-4 inline-block">← Back to Blog</Link>
+          <Link href="/blog" className="text-[#880808] hover:underline mt-4 inline-block">← Back to Blog</Link>
         </div>
       </div>
     );
@@ -288,7 +288,7 @@ export default function BlogPostPage({ params }: { params: Promise<{ slug: strin
         {/* Author bar */}
         <div className="flex items-center justify-between mb-4">
           <div className="flex items-center gap-2">
-            <div className="w-7 h-7 bg-yellow-400 rounded-full flex items-center justify-center flex-shrink-0">
+            <div className="w-7 h-7 bg-[#fdd835] rounded-full flex items-center justify-center flex-shrink-0">
               <span className="text-xs font-black text-black">DD</span>
             </div>
             <div>
@@ -341,7 +341,7 @@ export default function BlogPostPage({ params }: { params: Promise<{ slug: strin
               <p className="text-xs text-gray-500 italic">No comments yet. Be the first to share your thoughts!</p>
             ) : (
               commentsList.map((c, i) => (
-                <div key={i} className="bg-yellow-50/70 p-3 rounded-lg border border-yellow-100/50">
+                <div key={i} className="bg-[#fdd835]/10/70 p-3 rounded-lg border border-[#fdd835]/30/50">
                   <div className="flex justify-between items-center mb-1">
                     <span className="text-xs font-bold text-gray-900">{c.name}</span>
                     <span className="text-[10px] text-gray-400">
@@ -362,19 +362,19 @@ export default function BlogPostPage({ params }: { params: Promise<{ slug: strin
               value={name}
               onChange={e => setName(e.target.value)}
               placeholder="Your name"
-              className="w-full border border-gray-300 rounded px-3 py-2 text-xs bg-white focus:outline-none focus:ring-1 focus:ring-yellow-400 placeholder-black text-black"
+              className="w-full border border-gray-300 rounded px-3 py-2 text-xs bg-white focus:outline-none focus:ring-1 focus:ring-[#fdd835] placeholder-black text-black"
             />
             <textarea
               value={comment}
               onChange={e => setComment(e.target.value)}
               placeholder="Leave a comment..."
               rows={3}
-              className="w-full border border-gray-300 rounded px-3 py-2 text-xs bg-white focus:outline-none focus:ring-1 focus:ring-yellow-400 resize-none placeholder-black text-black"
+              className="w-full border border-gray-300 rounded px-3 py-2 text-xs bg-white focus:outline-none focus:ring-1 focus:ring-[#fdd835] resize-none placeholder-black text-black"
             />
             <button
               onClick={handlePostComment}
               disabled={isSubmitting}
-              className="mt-2 bg-[#A40000] text-white text-xs font-bold px-4 py-2 rounded hover:bg-red-800 transition-colors disabled:opacity-60"
+              className="mt-2 bg-[#880808] text-white text-xs font-bold px-4 py-2 rounded hover:bg-[#5a0505] transition-colors disabled:opacity-60"
             >
               {isSubmitting ? 'POSTING...' : 'POST COMMENT'}
             </button>
@@ -414,7 +414,7 @@ export default function BlogPostPage({ params }: { params: Promise<{ slug: strin
       </article>
 
       {/* Join the Club */}
-      <form onSubmit={handleNewsletterSubmit} className="bg-[#A40000] text-white text-center py-6 px-4 mt-4">
+      <form onSubmit={handleNewsletterSubmit} className="bg-[#880808] text-white text-center py-6 px-4 mt-4">
         <p className="text-xs font-black tracking-widest uppercase mb-1">Join the Sustainable Lifestyle Club</p>
         <p className="text-xs opacity-80 mb-3">Get eco-tips, product drops and offers — straight to your inbox.</p>
         <div className="flex justify-center gap-2">
@@ -431,7 +431,7 @@ export default function BlogPostPage({ params }: { params: Promise<{ slug: strin
             id="blog-newsletter-submit"
             type="submit"
             disabled={nlLoading}
-            className="bg-yellow-400 text-black text-xs font-bold px-4 py-2 rounded-r hover:bg-yellow-300 transition-colors disabled:opacity-60"
+            className="bg-[#fdd835] text-black text-xs font-bold px-4 py-2 rounded-r hover:bg-[#fdd835] transition-colors disabled:opacity-60"
           >
             {nlLoading ? 'JOINING...' : 'JOIN'}
           </button>
@@ -458,7 +458,7 @@ export default function BlogPostPage({ params }: { params: Promise<{ slug: strin
             <p className="text-gray-500 text-sm mb-6">You&apos;ll be the first to know about new launches, exclusive discounts, and eco-living tips from Akotro.</p>
             <button
               onClick={() => setNlSuccess(false)}
-              className="w-full bg-[#A40000] text-white py-3 rounded-lg font-bold hover:bg-red-800 transition-colors"
+              className="w-full bg-[#880808] text-white py-3 rounded-lg font-bold hover:bg-[#5a0505] transition-colors"
             >
               AWESOME, THANKS!
             </button>
