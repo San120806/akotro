@@ -107,6 +107,15 @@ function ShopContent() {
   let filtered = activeCategory === 'All Products'
     ? wixProducts
     : wixProducts.filter(p => {
+        if (activeCategory === 'Limited Edition') {
+          const limitedEditionNames = [
+            'Black Paper Pencil',
+            'Brown Paper Pencil',
+            'Plantable White Paper Pencil',
+            'Plantable Black Paper Pencil',
+          ];
+          return limitedEditionNames.includes(p.name);
+        }
         const keywords = CATEGORY_KEYWORDS[activeCategory] ?? [];
         const combined = p.category.toLowerCase() + ' ' + p.name.toLowerCase();
         if (activeCategory === 'Pens') return combined.includes('pen') && !combined.includes('pencil');
@@ -121,6 +130,32 @@ function ShopContent() {
       p.category.toLowerCase().includes(searchQuery)
     );
   }
+
+  // Sort products according to user requested order
+  const PRODUCT_ORDER = [
+    'Color Paper Pencil',
+    'Color Lead News Paper Pencil',
+    'Plantable Color Lead Paper Pencil',
+    'Plantable Color Paper Pencil',
+    'Color Lead Color Paper Pencil',
+    'Plantable News Paper Pencil',
+    'News Paper Pencil',
+    'Black Paper Pencil',
+    'Brown Paper Pencil',
+    'Plantable White Paper Pencil',
+    'Plantable Black Paper Pencil',
+  ];
+
+  filtered = [...filtered].sort((a, b) => {
+    const idxA = PRODUCT_ORDER.indexOf(a.name);
+    const idxB = PRODUCT_ORDER.indexOf(b.name);
+    
+    if (idxA !== -1 && idxB !== -1) return idxA - idxB;
+    if (idxA !== -1) return -1;
+    if (idxB !== -1) return 1;
+    
+    return wixProducts.indexOf(a) - wixProducts.indexOf(b);
+  });
 
   const addToCart = (product: any, e: any) => {
     e.preventDefault();
@@ -269,13 +304,13 @@ function ShopContent() {
       {/* Hero Products */}
       <div className="hero-products">
         <div className="hero-products-header">
-          <span className="hero-products-badge"> OUR HERO PRODUCTS</span>
-          <span className="hero-products-sub">Bestsellers — Start here</span>
+          <span className="hero-products-badge"> OUR SIGNATURE COLLECTION</span>
+          <span className="hero-products-sub">Bestsellers • Most Loved Products</span>
         </div>
         <div className="hero-grid">
           {[
-            { img: '/images/newspaperpencil.avif', num: 'HERO #1', off: '55% OFF', cat: ' BESTSELLER · NEWSPAPER PENCIL', name: 'News Paper Pencil', desc: 'Our most beloved product — crafted from recycled newspapers, giving waste paper a beautiful second life. Smooth 2B lead, earthy texture, perfect everyday pencil.', price: '₹115', orig: '₹180', save: 'Save ₹65', id: '1' },
-            { img: '/images/brownpaperpen.avif', num: 'HERO #2', off: '18% OFF', cat: ' RECYCLED · NEW ARRIVAL · ECO PEN', name: 'Brown Paper Pen', desc: 'Smooth ballpoint in a 100% recycled brown paper barrel. Comfortable grip, consistent ink flow, and a warm earthy look that stands apart from plastic pens.', price: '₹115', orig: '₹140', save: 'Save ₹25', id: '2' },
+            { img: '/images/newspaperpencil.avif', num: 'MOST LOVED', off: '55% OFF', cat: ' BESTSELLER · NEWSPAPER PENCIL', name: 'News Paper Pencil', desc: 'Our most beloved product — crafted from recycled newspapers, giving waste paper a beautiful second life. Smooth 2B lead, earthy texture, perfect everyday pencil.', price: '₹115', orig: '₹180', save: 'Save ₹65', id: '1' },
+            { img: '/images/brownpaperpen.avif', num: 'MOST LOVED', off: '18% OFF', cat: ' RECYCLED · NEW ARRIVAL · ECO PEN', name: 'Brown Paper Pen', desc: 'Smooth ballpoint in a 100% recycled brown paper barrel. Comfortable grip, consistent ink flow, and a warm earthy look that stands apart from plastic pens.', price: '₹115', orig: '₹140', save: 'Save ₹25', id: '2' },
           ].map(h => (
             <div key={h.id} className="hero-card">
               <div className="hero-card-img relative">

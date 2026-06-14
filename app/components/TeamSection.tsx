@@ -16,16 +16,16 @@ export default function TeamSection() {
           
           <div className="space-y-4 mb-8">
             <div className="border-l-4 border-yellow-500 pl-4 py-2 bg-white rounded">
-              <p className="font-bold text-sm text-black">Recycled Paper Products</p>
-              <p className="text-xs text-black">Pencils and pens from newspapers, kraft and colour paper. No wood, no plastic.</p>
+              <p className="font-bold text-sm text-black">RECYCLED PAPER PRODUCTS</p>
+              <p className="text-xs text-black">Made from recycled paper waste, transforming discarded materials into sustainable stationery with purpose.</p>
             </div>
             <div className="border-l-4 border-yellow-500 pl-4 py-2 bg-white rounded">
-              <p className="font-bold text-sm text-black">Women Artisan Employment</p>
-              <p className="text-xs text-black">Made by women from local Mumbai communities — income and independence.</p>
+              <p className="font-bold text-sm text-black">HANDCRAFTED BY RURAL WOMEN</p>
+              <p className="text-xs text-black">Created by talented women artisans from rural communities, preserving traditional skills while building economic independence.</p>
             </div>
             <div className="border-l-4 border-yellow-500 pl-4 py-2 bg-white rounded">
-              <p className="font-bold text-sm text-black">Plantable & Biodegradable</p>
-              <p className="text-xs text-black">Seed stationery with wildflower seeds. Done writing? Plant it.</p>
+              <p className="font-bold text-sm text-black">PLANTABLE & BIODEGRADABLE</p>
+              <p className="text-xs text-black">Embedded with seeds and designed to return to nature, creating life long after the last word is written.</p>
             </div>
           </div>
 

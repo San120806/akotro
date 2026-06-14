@@ -22,21 +22,21 @@ export default function MissionSection() {
           {/* Right - Stats */}
           <div className="space-y-6">
             <div className="bg-white p-6 rounded shadow-sm">
-              <h3 className="font-bold mb-2 text-black">#1 - EMPOWERING WOMEN</h3>
+              <h3 className="font-bold mb-2 text-black">#1 – WOMEN-LED CRAFTSMANSHIP</h3>
               <p className="text-sm text-black">
-                Made by women Artisans Made by women Artisans from India and artisan communities across India 
+                Products handcrafted by talented rural women artisans, turning traditional skills into sustainable livelihoods.
               </p>
             </div>
             <div className="bg-white p-6 rounded shadow-sm">
-              <h3 className="font-bold mb-2 text-black">#2 - SUSTAINABLE PRODUCTION</h3>
+              <h3 className="font-bold mb-2 text-black">#2 – RECYCLED WITH PURPOSE</h3>
               <p className="text-sm text-black">
-                Our eco-commerce & pens items & ware Zero Plastic, Upcycled & Sustainable source...
+                Made from recycled materials and crafted by hand, giving waste a second life while reducing environmental impact.
               </p>
             </div>
             <div className="bg-white p-6 rounded shadow-sm">
-              <h3 className="font-bold mb-2 text-black">#3 - COMMUNITY IMPACT</h3>
+              <h3 className="font-bold mb-2 text-black">#3 – EMPOWERING COMMUNITIES</h3>
               <p className="text-sm text-black">
-                100k+ Community Supported, 100k+ Handloom, 100k+ locally Handmade Communities Supported...
+                Every purchase supports women entrepreneurs, strengthens rural communities, and helps create a more sustainable future.
               </p>
             </div>
           </div>
