@@ -44,11 +44,17 @@ export default function ProductPage() {
         const found = items.find((p: any) => p._id === id);
         
         if (found) {
-          // Override with local images for News Paper Pencil
+          // Override with local images for specific products
           const isNewsPaperPencil = found.name?.toLowerCase().trim() === 'news paper pencil';
+          const isMenTee = found.name?.toLowerCase().trim() === 'men organic cotton tee';
+          const isWomenTee = found.name?.toLowerCase().trim() === 'women organic cotton tee';
           const wixImages = found.media?.items?.map((i: any) => getImageUrl(i.image?.url)) || [getImageUrl(found.media?.mainMedia?.image?.url)];
           const finalImages = isNewsPaperPencil
             ? ['/images/npp1.png', '/images/npp2.png', '/images/npp3.png', '/images/npp4.png', '/images/npp5.png']
+            : isMenTee
+            ? ['/images/men-tee-1.png', '/images/men-tee-2.png', '/images/men-tee-3.png', '/images/men-tee-4.png', '/images/men-tee-5.png']
+            : isWomenTee
+            ? ['/images/women-tee-1.png', '/images/women-tee-2.png', '/images/women-tee-3.png', '/images/women-tee-4.png', '/images/women-tee-5.png', '/images/women-tee-6.png', '/images/women-tee-7.png', '/images/women-tee-8.png', '/images/women-tee-9.png', '/images/women-tee-10.png']
             : wixImages;
 
           const origPrice = found.priceData?.price || 0;
