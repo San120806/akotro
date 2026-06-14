@@ -29,6 +29,10 @@ export default function ProductPage() {
   const [tab, setTab] = useState('description');
   const [addedProduct, setAddedProduct] = useState<any>(null);
   const [related, setRelated] = useState<any[]>([]);
+  const [selectedSize, setSelectedSize] = useState<string>('');
+  const [selectedColor, setSelectedColor] = useState<string>('');
+  const [sizeError, setSizeError] = useState(false);
+  const [colorError, setColorError] = useState(false);
 
   useEffect(() => {
     async function fetchProduct() {
@@ -52,6 +56,43 @@ export default function ProductPage() {
           const hasDiscount = salePrice < origPrice;
           const discountPct = hasDiscount ? Math.round(((origPrice - salePrice) / origPrice) * 100) : 0;
 
+          // Extract size + color options from Wix productOptions
+          const isTee = found.name?.toLowerCase().includes('tee');
+          const wixOptions: any[] = found.productOptions || [];
+          const sizeOption = wixOptions.find((o: any) => o.name?.toLowerCase() === 'size');
+          const colorOption = wixOptions.find((o: any) => o.name?.toLowerCase() === 'color');
+
+          // Fallback options for tees if Wix doesn't have them configured yet
+          const defaultSizes = ['XS', 'S', 'M', 'L', 'XL', 'XXL'];
+          const defaultColors = isTee && found.name?.toLowerCase().includes('men') && !found.name?.toLowerCase().includes('women')
+            ? [
+                { name: 'White', hex: '#FFFFFF' },
+                { name: 'Black', hex: '#111111' },
+                { name: 'Navy', hex: '#1B2A4A' },
+                { name: 'Grey', hex: '#6B7280' },
+                { name: 'Olive', hex: '#6B7B2A' },
+              ]
+            : [
+                { name: 'Red', hex: '#C0392B' },
+                { name: 'Mauve', hex: '#9B5DA5' },
+                { name: 'White', hex: '#FFFFFF' },
+                { name: 'Dark Red', hex: '#7B0000' },
+                { name: 'Pink', hex: '#F472B6' },
+                { name: 'Sage', hex: '#7A8C5C' },
+                { name: 'Black', hex: '#111111' },
+                { name: 'Lime', hex: '#8DB600' },
+                { name: 'Lavender', hex: '#D8B4FE' },
+              ];
+
+          const sizes = sizeOption
+            ? sizeOption.choices?.map((c: any) => c.value || c.description) || defaultSizes
+            : isTee ? defaultSizes : [];
+
+          const colors = colorOption
+            ? colorOption.choices?.map((c: any) => ({ name: c.description || c.value, hex: c.value?.startsWith('#') ? c.value : `#${c.value}` }))
+            : isTee ? defaultColors : [];
+
+          const isTeeProduct = isTee;
           const mappedProduct = {
             id: found._id,
             name: found.name,
@@ -66,13 +107,24 @@ export default function ProductPage() {
             badge: hasDiscount ? `${discountPct}% OFF` : undefined,
             images: finalImages,
             image: finalImages[0],
-            tags: ['Eco-Friendly', '100% Recycled', 'Zero Plastic'],
-            specs: [
-              { label: 'Material', value: 'Recycled Paper' },
-              { label: 'Lead Type', value: '2B Extra Dark' }
-            ],
-            keyFeatures: ['100% Recycled Material', 'Comfortable Grip', 'Dark 2B Lead'],
-            whyAkotro: ['Women Artisans', 'Zero Plastic', 'Plantable']
+            tags: isTeeProduct ? ['Organic Cotton', '100% Natural', 'Eco-Friendly'] : ['Eco-Friendly', '100% Recycled', 'Zero Plastic'],
+            specs: isTeeProduct
+              ? [
+                  { label: 'Material', value: '100% Organic Cotton' },
+                  { label: 'Fit', value: 'Regular / Unisex' },
+                  { label: 'Care', value: 'Machine wash cold' },
+                ]
+              : [
+                  { label: 'Material', value: 'Recycled Paper' },
+                  { label: 'Lead Type', value: '2B Extra Dark' }
+                ],
+            keyFeatures: isTeeProduct
+              ? ['100% GOTS Organic Cotton', 'Breathable & Lightweight', 'Pre-shrunk fabric', 'Ethically made in India']
+              : ['100% Recycled Material', 'Comfortable Grip', 'Dark 2B Lead'],
+            whyAkotro: ['Women Artisans', 'Zero Plastic', 'Plantable'],
+            sizes,
+            colors,
+            isTee: isTeeProduct,
           };
           setProduct(mappedProduct);
           
@@ -189,6 +241,21 @@ export default function ProductPage() {
         .qty-btn { width: 32px; height: 32px; border: none; background: transparent; font-size: 16px; cursor: pointer; color: #111; }
         .qty-val { width: 40px; text-align: center; font-size: 13px; font-weight: 800; color: #111; border-left: 1px solid #E5DFB3; border-right: 1px solid #E5DFB3; height: 32px; line-height: 32px; }
         .qty-pack { font-size: 10px; color: #999; }
+
+        .var-section { margin-bottom: 20px; }
+        .var-label { font-size: 10px; font-weight: 800; letter-spacing: .08em; color: #555; text-transform: uppercase; margin-bottom: 10px; display: flex; align-items: center; gap: 6px; }
+        .var-label span { font-weight: 500; color: #111; font-size: 11px; letter-spacing: 0; text-transform: none; }
+        .var-label.error-label { color: #880808; }
+        .size-select { width: 100%; border: 1.5px solid #E5DFB3; background: #fff; padding: 10px 14px; font-size: 13px; font-weight: 600; color: #111; border-radius: 4px; cursor: pointer; appearance: none; -webkit-appearance: none; background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%23555' stroke-width='2.5'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E"); background-repeat: no-repeat; background-position: right 14px center; }
+        .size-select:focus { outline: none; border-color: #fdd835; }
+        .size-select.error { border-color: #880808; }
+        .color-swatches { display: flex; flex-wrap: wrap; gap: 8px; }
+        .color-swatch { width: 30px; height: 30px; border-radius: 50%; cursor: pointer; border: 2px solid transparent; transition: all .15s; position: relative; box-shadow: 0 1px 3px rgba(0,0,0,.15); }
+        .color-swatch:hover { transform: scale(1.12); }
+        .color-swatch.selected { border-color: #111; box-shadow: 0 0 0 2px #fff, 0 0 0 4px #111; }
+        .color-swatch.white-swatch { border-color: #ddd; }
+        .color-swatch.white-swatch.selected { border-color: #111; }
+        .color-err { font-size: 10px; color: #880808; margin-top: 6px; font-weight: 600; }
 
         .btn-atc { width: 100%; background: #A90000; color: #fff; border: none; font-size: 12px; font-weight: 800; padding: 16px; cursor: pointer; display: flex; align-items: center; justify-content: center; gap: 8px; margin-bottom: 12px; letter-spacing: .1em; }
         .btn-buy { width: 100%; background: #F6EDB1; color: #111; border: 1px solid #E5DFB3; font-size: 11px; font-weight: 800; padding: 16px; cursor: pointer; margin-bottom: 12px; letter-spacing: .1em; }
@@ -369,6 +436,47 @@ export default function ProductPage() {
             {product.tags.map((t: string) => <span key={t} className="tag-pill">{t}</span>)}
           </div>
 
+          {/* Size Selector — only for Tees */}
+          {product.isTee && product.sizes?.length > 0 && (
+            <div className="var-section">
+              <div className={`var-label${sizeError ? ' error-label' : ''}`}>
+                Size * {selectedSize && <span>{selectedSize}</span>}
+              </div>
+              <select
+                className={`size-select${sizeError ? ' error' : ''}`}
+                value={selectedSize}
+                onChange={e => { setSelectedSize(e.target.value); setSizeError(false); }}
+              >
+                <option value="">Select</option>
+                {product.sizes.map((s: string) => (
+                  <option key={s} value={s}>{s}</option>
+                ))}
+              </select>
+              {sizeError && <div className="color-err">Please select a size</div>}
+            </div>
+          )}
+
+          {/* Color Swatches — only for Tees */}
+          {product.isTee && product.colors?.length > 0 && (
+            <div className="var-section">
+              <div className={`var-label${colorError ? ' error-label' : ''}`}>
+                Color * {selectedColor && <span>{selectedColor}</span>}
+              </div>
+              <div className="color-swatches">
+                {product.colors.map((c: any) => (
+                  <button
+                    key={c.name}
+                    title={c.name}
+                    className={`color-swatch${selectedColor === c.name ? ' selected' : ''}${c.hex === '#FFFFFF' || c.hex === '#ffffff' ? ' white-swatch' : ''}`}
+                    style={{ background: c.hex }}
+                    onClick={() => { setSelectedColor(c.name); setColorError(false); }}
+                  />
+                ))}
+              </div>
+              {colorError && <div className="color-err">Please select a colour</div>}
+            </div>
+          )}
+
           <div className="qty-row">
             <span className="qty-label">Quantity</span>
             <div className="qty-ctrl">
@@ -376,7 +484,7 @@ export default function ProductPage() {
               <span className="qty-val">{qty}</span>
               <button className="qty-btn" onClick={() => setQty(q => q + 1)}>+</button>
             </div>
-            <span className="qty-pack">Pack of 10 pencils</span>
+            <span className="qty-pack">{product.isTee ? 'Pack of 1' : 'Pack of 10 pencils'}</span>
           </div>
 
           <button className="btn-atc w-full mt-4 flex items-center justify-center gap-2" onClick={addToCart}>
