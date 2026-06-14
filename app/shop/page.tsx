@@ -141,6 +141,14 @@ function ShopContent() {
     );
   }
 
+  // Limited Edition product names
+  const LIMITED_EDITION_NAMES = [
+    'Black Paper Pencil',
+    'Brown Paper Pencil',
+    'Plantable White Paper Pencil',
+    'Plantable Black Paper Pencil',
+  ];
+
   // Sort products according to user requested order
   const PRODUCT_ORDER = [
     'Color Paper Pencil',
@@ -230,6 +238,30 @@ function ShopContent() {
         .prod-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:18px; }
         @media(max-width:900px){ .prod-grid{grid-template-columns:repeat(2,1fr);} }
         @media(max-width:600px){ .prod-grid{grid-template-columns:1fr;} }
+
+        /* Mobile-only Limited Edition divider */
+        .le-divider { display:none; }
+        @media(max-width:600px){
+          .le-divider {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            grid-column: 1 / -1;
+            padding: 8px 0 4px;
+          }
+          .le-divider-line { flex: 1; height: 1.5px; background: #111; }
+          .le-divider-label {
+            font-size: 11px;
+            font-weight: 800;
+            letter-spacing: .12em;
+            color: #111;
+            text-transform: uppercase;
+            white-space: nowrap;
+            background: #fdd835;
+            padding: 4px 12px;
+            border-radius: 999px;
+          }
+        }
 
         .pcard { background:#fff; border-radius:12px; overflow:hidden; border:1px solid rgba(0,0,0,.07); transition:transform .2s,box-shadow .2s; cursor:pointer; display:flex; flex-direction:column; }
         .pcard:hover { transform:translateY(-4px); box-shadow:0 14px 36px rgba(0,0,0,.1); }
@@ -396,7 +428,7 @@ function ShopContent() {
               <div className="pcard">
                 <div className="pcard-img">
                   <Image src={p.image} alt={p.name} fill style={{ objectFit: 'cover' }} sizes="(max-width:600px) 100vw, 33vw" />
-                  {p.label && <span className="pcard-badge-left" style={{ background: p.badgeColor || '#111' }}>{p.label.split('·')[0].trim()}</span>}
+                  {p.label && <span className="pcard-badge-left" style={{ background: LIMITED_EDITION_NAMES.includes(p.name) ? '#880808' : (p.badgeColor || '#111') }}>{LIMITED_EDITION_NAMES.includes(p.name) ? 'LIMITED EDITION' : p.label.split('·')[0].trim()}</span>}
                   {p.discount && <span className="pcard-badge-right">{p.discount}% OFF</span>}
                   <button 
                     className="pcard-wishlist" 
@@ -452,49 +484,66 @@ function ShopContent() {
             </a>
           </div>
 
-          {filtered.slice(3).map(p => (
-            <Link key={p.id} href={`/product/${p.id}`} style={{ textDecoration: 'none' }}>
-              <div className="pcard">
-                <div className="pcard-img">
-                  <Image src={p.image} alt={p.name} fill style={{ objectFit: 'cover' }} sizes="(max-width:600px) 100vw, 33vw" />
-                  {p.label && <span className="pcard-badge-left" style={{ background: p.badgeColor || '#111' }}>{p.label.split('·')[0].trim()}</span>}
-                  {p.discount && <span className="pcard-badge-right">{p.discount}% OFF</span>}
-                  <button 
-                    className="pcard-wishlist" 
-                    onClick={(e) => toggleWishlist(p, e)}
-                    title={isFavorite(p.id) ? "Remove from Wishlist" : "Add to Wishlist"}
-                  >
-                    <svg 
-                      fill={isFavorite(p.id) ? "#880808" : "none"} 
-                      stroke="#880808" 
-                      viewBox="0 0 24 24"
-                      className="w-4 h-4"
-                    >
-                      <path 
-                        strokeLinecap="round" 
-                        strokeLinejoin="round" 
-                        strokeWidth={2} 
-                        d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" 
-                      />
-                    </svg>
-                  </button>
-                </div>
-                <div className="pcard-body">
-                  <div className="pcard-cat">{p.category}</div>
-                  <div className="pcard-name">{p.name}</div>
-                  <div className="pcard-foot">
-                    <div>
-                      <span className="pcard-price">{p.price}</span>
-                      {p.originalPrice && <span className="pcard-orig">₹{p.originalPrice}</span>}
-                    </div>
-                    <button className="cart-btn" onClick={e => addToCart(p, e)} title="Add to cart">
-                      <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z" /></svg>
-                    </button>
+          {filtered.slice(3).map((p, sliceIdx) => {
+            // The index in the full filtered array
+            const fullIdx = sliceIdx + 3;
+            // Insert mobile-only Limited Edition divider just before the first limited edition product
+            // In sorted order: News Paper Pencil is at index 6, limited edition starts at index 7
+            const firstLimitedIdx = filtered.findIndex(fp => LIMITED_EDITION_NAMES.includes(fp.name));
+            const showDivider = firstLimitedIdx !== -1 && fullIdx === firstLimitedIdx;
+            return (
+              <>
+                {showDivider && (
+                  <div key="le-divider" className="le-divider">
+                    <div className="le-divider-line" />
+                    <span className="le-divider-label">Limited Edition</span>
+                    <div className="le-divider-line" />
                   </div>
-                </div>
-              </div>
-            </Link>
-          ))}
+                )}
+                <Link key={p.id} href={`/product/${p.id}`} style={{ textDecoration: 'none' }}>
+                  <div className="pcard">
+                    <div className="pcard-img">
+                      <Image src={p.image} alt={p.name} fill style={{ objectFit: 'cover' }} sizes="(max-width:600px) 100vw, 33vw" />
+                      {p.label && <span className="pcard-badge-left" style={{ background: LIMITED_EDITION_NAMES.includes(p.name) ? '#880808' : (p.badgeColor || '#111') }}>{LIMITED_EDITION_NAMES.includes(p.name) ? 'LIMITED EDITION' : p.label.split('·')[0].trim()}</span>}
+                      {p.discount && <span className="pcard-badge-right">{p.discount}% OFF</span>}
+                      <button 
+                        className="pcard-wishlist" 
+                        onClick={(e) => toggleWishlist(p, e)}
+                        title={isFavorite(p.id) ? "Remove from Wishlist" : "Add to Wishlist"}
+                      >
+                        <svg 
+                          fill={isFavorite(p.id) ? "#880808" : "none"} 
+                          stroke="#880808" 
+                          viewBox="0 0 24 24"
+                          className="w-4 h-4"
+                        >
+                          <path 
+                            strokeLinecap="round" 
+                            strokeLinejoin="round" 
+                            strokeWidth={2} 
+                            d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" 
+                          />
+                        </svg>
+                      </button>
+                    </div>
+                    <div className="pcard-body">
+                      <div className="pcard-cat">{p.category}</div>
+                      <div className="pcard-name">{p.name}</div>
+                      <div className="pcard-foot">
+                        <div>
+                          <span className="pcard-price">{p.price}</span>
+                          {p.originalPrice && <span className="pcard-orig">₹{p.originalPrice}</span>}
+                        </div>
+                        <button className="cart-btn" onClick={e => addToCart(p, e)} title="Add to cart">
+                          <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z" /></svg>
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                </Link>
+              </>
+            );
+          })}
         </div>
       </div>
 

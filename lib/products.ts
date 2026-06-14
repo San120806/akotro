@@ -83,8 +83,8 @@ export const ALL_PRODUCTS: Product[] = [
     ],
   },
   {
-    id: '3', name: 'Brown Paper Pencil', category: 'RECYCLED PENCIL', label: 'RECYCLED PENCIL',
-    badge: null, badgeColor: '', price: 115, originalPrice: null, save: null,
+    id: '3', name: 'Brown Paper Pencil', category: 'LIMITED EDITION', label: 'LIMITED EDITION',
+    badge: '50% off', badgeColor: '#880808', price: 110, originalPrice: 220, save: 'Save ₹110',
     image: '/images/brwnpwncil.avif', images: ['/images/brwnpwncil.avif'],
     description: 'Classic HB pencil wrapped in recycled brown kraft paper. Earthy and smooth.',
     featured: false, sku: 'SKU #PP03',
@@ -94,8 +94,8 @@ export const ALL_PRODUCTS: Product[] = [
     whyAkotro: ['PERFECT GIFT — Ideal for students and offices.', 'WOMEN-MADE — Handcrafted by women artisans from local Mumbai communities.'],
   },
   {
-    id: '4', name: 'Black Paper Pencil', category: 'RECYCLED PENCIL', label: 'RECYCLED PENCIL',
-    badge: null, badgeColor: '', price: 125, originalPrice: null, save: null,
+    id: '4', name: 'Black Paper Pencil', category: 'LIMITED EDITION', label: 'LIMITED EDITION',
+    badge: '48% off', badgeColor: '#880808', price: 125, originalPrice: 240, save: 'Save ₹115',
     image: '/images/blackpaperpencil.avif', images: ['/images/blackpaperpencil.avif'],
     description: 'Bold and striking. Made from recycled black paper with smooth HB lead.',
     featured: false, sku: 'SKU #PP04',
@@ -205,8 +205,8 @@ export const ALL_PRODUCTS: Product[] = [
     whyAkotro: ['PERFECT GIFT — One that keeps giving.', 'WOMEN-MADE — Handcrafted by women artisans.'],
   },
   {
-    id: '14', name: 'Plantable Black Paper Pencil', category: 'PLANTABLE PENCIL', label: 'PLANTABLE PENCIL',
-    badge: null, badgeColor: '', price: 140, originalPrice: null, save: null,
+    id: '14', name: 'Plantable Black Paper Pencil', category: 'LIMITED EDITION', label: 'LIMITED EDITION',
+    badge: '46% off', badgeColor: '#880808', price: 140, originalPrice: 260, save: 'Save ₹120',
     image: '/images/plantableblackpaperpencil.avif', images: ['/images/plantableblackpaperpencil.avif'],
     description: 'Dark, bold plantable pencil. Write it, plant it, grow something beautiful.',
     featured: false, sku: 'SKU #PP14',
@@ -227,8 +227,8 @@ export const ALL_PRODUCTS: Product[] = [
     whyAkotro: ['PERFECT GIFT — Kids will love it.', 'WOMEN-MADE — Handcrafted by women artisans.'],
   },
   {
-    id: '16', name: 'Plantable White Paper Pencil', category: 'PLANTABLE PENCIL', label: 'PLANTABLE PENCIL',
-    badge: null, badgeColor: '', price: 120, originalPrice: null, save: null,
+    id: '16', name: 'Plantable White Paper Pencil', category: 'LIMITED EDITION', label: 'LIMITED EDITION',
+    badge: '48% off', badgeColor: '#880808', price: 130, originalPrice: 250, save: 'Save ₹120',
     image: '/images/plantablewhitepaperpencil.avif', images: ['/images/plantablewhitepaperpencil.avif'],
     description: 'Minimal white plantable pencil. Clean design, green soul.',
     featured: false, sku: 'SKU #PP16',
