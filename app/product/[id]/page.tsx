@@ -40,19 +40,32 @@ export default function ProductPage() {
         const found = items.find((p: any) => p._id === id);
         
         if (found) {
+          // Override with local images for News Paper Pencil
+          const isNewsPaperPencil = found.name?.toLowerCase().trim() === 'news paper pencil';
+          const wixImages = found.media?.items?.map((i: any) => getImageUrl(i.image?.url)) || [getImageUrl(found.media?.mainMedia?.image?.url)];
+          const finalImages = isNewsPaperPencil
+            ? ['/images/npp1.png', '/images/npp2.png', '/images/npp3.png', '/images/npp4.png', '/images/npp5.png']
+            : wixImages;
+
+          const origPrice = found.priceData?.price || 0;
+          const salePrice = found.priceData?.discountedPrice || origPrice;
+          const hasDiscount = salePrice < origPrice;
+          const discountPct = hasDiscount ? Math.round(((origPrice - salePrice) / origPrice) * 100) : 0;
+
           const mappedProduct = {
             id: found._id,
             name: found.name,
             description: found.description ? found.description.replace(/<[^>]*>?/gm, '') : '',
-            price: found.priceData?.formatted?.price || `₹${found.priceData?.price || 0}`,
-            rawPrice: found.priceData?.price || 0,
-            originalPrice: undefined, // Wix usually handles this inside priceData.discountedPrice
+            price: `₹${salePrice}`,
+            rawPrice: salePrice,
+            originalPrice: hasDiscount ? origPrice : undefined,
+            discount: hasDiscount ? discountPct : undefined,
+            save: hasDiscount ? `Save ₹${origPrice - salePrice}` : undefined,
             category: found.collectionIds && found.collectionIds.length > 0 ? 'Plantable' : 'Pencils',
             sku: found.sku || 'N/A',
-            badge: undefined,
-            save: undefined,
-            images: found.media?.items?.map((i: any) => getImageUrl(i.image?.url)) || [getImageUrl(found.media?.mainMedia?.image?.url)],
-            image: getImageUrl(found.media?.mainMedia?.image?.url),
+            badge: hasDiscount ? `${discountPct}% OFF` : undefined,
+            images: finalImages,
+            image: finalImages[0],
             tags: ['Eco-Friendly', '100% Recycled', 'Zero Plastic'],
             specs: [
               { label: 'Material', value: 'Recycled Paper' },
