@@ -61,7 +61,7 @@ export default function ProductShowcaseSection() {
     {
       id: 1,
       badge: 'MOST LOVED',
-      image: '/images/newspaperpencil.avif',
+      image: '/images/npp1.png',
       name: 'News Paper Pencil',
       description: 'Our most beloved product - crafted from recycled newspapers, giving waste paper a beautiful second life. Smooth 2B lead, perfect everyday pencil. Loved by artists, students, and eco-conscious souls.',
       price: 110,

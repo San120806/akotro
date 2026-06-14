@@ -319,7 +319,7 @@ function ShopContent() {
         </div>
         <div className="hero-grid">
           {[
-            { img: '/images/newspaperpencil.avif', num: 'MOST LOVED', off: '55% OFF', cat: ' BESTSELLER · NEWSPAPER PENCIL', name: 'News Paper Pencil', desc: 'Our most beloved product — crafted from recycled newspapers, giving waste paper a beautiful second life. Smooth 2B lead, earthy texture, perfect everyday pencil.', price: '₹115', orig: '₹180', save: 'Save ₹65', id: '1' },
+            { img: '/images/npp1.png', num: 'MOST LOVED', off: '55% OFF', cat: ' BESTSELLER · NEWSPAPER PENCIL', name: 'News Paper Pencil', desc: 'Our most beloved product — crafted from recycled newspapers, giving waste paper a beautiful second life. Smooth 2B lead, earthy texture, perfect everyday pencil.', price: '₹115', orig: '₹180', save: 'Save ₹65', id: '1' },
             { img: '/images/brownpaperpen.avif', num: 'MOST LOVED', off: '18% OFF', cat: ' RECYCLED · NEW ARRIVAL · ECO PEN', name: 'Brown Paper Pen', desc: 'Smooth ballpoint in a 100% recycled brown paper barrel. Comfortable grip, consistent ink flow, and a warm earthy look that stands apart from plastic pens.', price: '₹115', orig: '₹140', save: 'Save ₹25', id: '2' },
           ].map(h => (
             <div key={h.id} className="hero-card">
